@@ -11,6 +11,7 @@
     <header>
         <nav>
             <div class="logo"><img src="images/logo.png" alt="AraucaCine"></div>
+            <button class="hamburger" aria-label="Menú">&#9776;</button>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
@@ -252,6 +253,12 @@
         const sections = document.querySelectorAll('section');
         const footer = document.getElementById('footer-section');
         const navLinks = document.querySelectorAll('nav a, .footer-col a');
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('open');
+        });
 
         function showSection(id) {
             sections.forEach(s => {
@@ -268,6 +275,7 @@
             } else {
                 footer.style.display = 'none';
             }
+            navUl.classList.remove('open');
         }
 
         navLinks.forEach(link => {

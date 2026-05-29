@@ -540,3 +540,116 @@ h2 {
     color: #555;
     font-size: 0.8rem;
 }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    z-index: 300;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 200;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    .hero-logo {
+        height: 60px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    section {
+        padding: 3.5rem 1rem 1rem;
+    }
+
+    .about, .programs, .team, .gallery, .news, .help, .contact {
+        padding: 3.5rem 1rem 1rem;
+    }
+
+    .about-grid, .programs-grid, .team-grid, .gallery-grid, .news-grid, .help-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 0.3rem;
+    }
+
+    .team-card img {
+        height: 200px;
+    }
+
+    .program-img {
+        height: 150px;
+    }
+
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    #footer-section {
+        padding: 0;
+    }
+}
