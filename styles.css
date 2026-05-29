@@ -9,21 +9,29 @@ body {
     background: #000;
     color: #ccc;
     line-height: 1.6;
-    overflow: hidden;
-    height: 100vh;
 }
 
 section {
-    display: none;
-    height: 100vh;
-    overflow-y: auto;
     padding-top: 4rem;
 }
 
-section.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+@media (min-width: 769px) {
+    body {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    section {
+        display: none;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    section.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 header {
@@ -492,9 +500,14 @@ h2 {
 }
 
 #footer-section {
-    display: none;
     background: #000;
     border-top: 1px solid #1a1a1a;
+}
+
+@media (min-width: 769px) {
+    #footer-section {
+        display: none;
+    }
 }
 
 .footer-content {
@@ -556,6 +569,18 @@ h2 {
 @media (max-width: 768px) {
     body {
         font-size: 14px;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 5rem 1rem 3rem;
+    }
+
+    section {
+        padding-top: 4rem;
     }
 
     .hamburger {
@@ -604,12 +629,8 @@ h2 {
         margin-bottom: 2rem;
     }
 
-    section {
-        padding: 3.5rem 1rem 1rem;
-    }
-
     .about, .programs, .team, .gallery, .news, .help, .contact {
-        padding: 3.5rem 1rem 1rem;
+        padding: 3rem 1rem;
     }
 
     .about-grid, .programs-grid, .team-grid, .gallery-grid, .news-grid, .help-grid {

@@ -255,25 +255,27 @@
         const navLinks = document.querySelectorAll('nav a, .footer-col a');
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
+        const isDesktop = () => window.innerWidth > 768;
 
         hamburger.addEventListener('click', () => {
             navUl.classList.toggle('open');
         });
 
         function showSection(id) {
-            sections.forEach(s => {
-                if (s.id === id) {
-                    s.style.display = 'flex';
-                    s.classList.add('active');
-                } else {
-                    s.style.display = 'none';
-                    s.classList.remove('active');
-                }
-            });
-            if (id === 'contacto') {
-                footer.style.display = 'block';
+            if (isDesktop()) {
+                sections.forEach(s => {
+                    if (s.id === id) {
+                        s.style.display = 'flex';
+                        s.classList.add('active');
+                    } else {
+                        s.style.display = 'none';
+                        s.classList.remove('active');
+                    }
+                });
+                footer.style.display = id === 'contacto' ? 'block' : 'none';
             } else {
-                footer.style.display = 'none';
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                footer.style.display = 'block';
             }
             navUl.classList.remove('open');
         }
@@ -298,8 +300,11 @@
             }
         });
 
-        const hash = window.location.hash.replace('#', '');
-        showSection(hash || 'inicio');
+        if (isDesktop()) {
+            const hash = window.location.hash.replace('#', '');
+            sections.forEach(s => s.style.display = 'none');
+            showSection(hash || 'inicio');
+        }
     </script>
 </body>
 </html>
