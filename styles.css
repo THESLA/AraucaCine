@@ -30,10 +30,9 @@ nav {
     padding: 0 2rem;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
+.logo img {
+    height: 50px;
+    display: block;
 }
 
 nav ul {
