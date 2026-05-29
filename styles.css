@@ -9,6 +9,21 @@ body {
     background: #000;
     color: #ccc;
     line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+}
+
+section {
+    display: none;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 4rem;
+}
+
+section.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header {
@@ -55,7 +70,6 @@ nav a:hover {
 }
 
 .hero {
-    height: 100vh;
     background: #000;
     display: flex;
     align-items: center;
@@ -477,7 +491,8 @@ h2 {
     align-self: flex-start;
 }
 
-footer {
+#footer-section {
+    display: none;
     background: #000;
     border-top: 1px solid #1a1a1a;
 }
