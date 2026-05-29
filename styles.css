@@ -31,7 +31,8 @@ nav {
 }
 
 .logo img {
-    height: 50px;
+    height: 30px;
+    width: auto;
     display: block;
 }
 
@@ -63,7 +64,8 @@ nav a:hover {
 }
 
 .hero-logo {
-    height: 120px;
+    height: 80px;
+    width: auto;
     margin-bottom: 2rem;
 }
 
@@ -481,7 +483,8 @@ footer {
 }
 
 .footer-logo {
-    height: 40px;
+    height: 30px;
+    width: auto;
     margin-bottom: 1rem;
 }
 
