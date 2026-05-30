@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" style="color-scheme: dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AraucaCine - ONG Cultural</title>
+    <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="preconnect" href="https://www.tiktok.com">
+    <link rel="preconnect" href="https://cdn.tiktok.com">
 </head>
 <body>
+    <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
     <header>
         <nav>
             <div class="logo"><a href="#inicio"><img src="images/logo.png" alt="AraucaCine"></a></div>
@@ -26,7 +30,7 @@
 
     <section id="inicio" class="hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('images/hero.jpg') center/cover no-repeat;">
         <div class="hero-content">
-            <img src="images/logo.png" alt="AraucaCine" class="hero-logo">
+            <h1><img src="images/logo.png" alt="AraucaCine" class="hero-logo" width="100" height="100"></h1>
             <p>Transformando vidas a través del cine y la cultura en Arauca</p>
             <a href="#nosotros" class="btn">Conócenos</a>
             <a href="#ayudar" class="btn btn-secondary">Quiero Ayudar</a>
@@ -93,27 +97,27 @@
         <h2>Galería</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="images/gallery1.jpg" alt="Taller de cine">
+                <img src="images/gallery1.jpg" alt="Taller de cine" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Taller de Producción 2025</div>
             </div>
             <div class="gallery-item">
-                <img src="images/gallery2.jpg" alt="Función comunitaria">
+                <img src="images/gallery2.jpg" alt="Función comunitaria" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Cine Comunitario en Caño Limón</div>
             </div>
             <div class="gallery-item">
-                <img src="images/gallery3.jpg" alt="Festival">
+                <img src="images/gallery3.jpg" alt="Festival" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Festival de Cine Orinoquía 2025</div>
             </div>
             <div class="gallery-item">
-                <img src="images/gallery4.jpg" alt="Escuela">
+                <img src="images/gallery4.jpg" alt="Escuela" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Taller escolar en Arauquita</div>
             </div>
             <div class="gallery-item">
-                <img src="images/gallery5.jpg" alt="Taller de guion">
+                <img src="images/gallery5.jpg" alt="Taller de guion" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Taller de Guion Creativo</div>
             </div>
             <div class="gallery-item">
-                <img src="images/gallery6.jpg" alt="Función al aire libre">
+                <img src="images/gallery6.jpg" alt="Función al aire libre" width="600" height="400" loading="lazy">
                 <div class="gallery-overlay">Cine al Aire Libre - Parque Arauca</div>
             </div>
         </div>
@@ -166,16 +170,21 @@
                 <p><strong>Teléfono:</strong> 3166976348</p>
                 <p><strong>Dirección:</strong> Cra 30a 12 - 44 Vergel, Tame - Arauca</p>
                 <div class="social">
-                    <a href="#" class="social-link">Facebook</a>
-                    <a href="#" class="social-link">Instagram</a>
-                    <a href="#" class="social-link">YouTube</a>
+                    <a href="https://facebook.com/arauacine" class="social-link" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://instagram.com/arauacine" class="social-link" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://youtube.com/@arauacine" class="social-link" target="_blank" rel="noopener">YouTube</a>
                 </div>
             </div>
             <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Asunto">
-                <textarea placeholder="Mensaje" rows="5" required></textarea>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez…" autocomplete="name" required>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ej: correo@ejemplo.com…" autocomplete="email" required spellcheck="false">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Ej: Quiero colaborar…" autocomplete="off">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje…" rows="5" required spellcheck="true"></textarea>
+                <div aria-live="polite"></div>
                 <button type="submit" class="btn">Enviar Mensaje</button>
             </form>
         </div>
@@ -184,7 +193,7 @@
     <footer id="footer-section">
         <div class="footer-content">
             <div class="footer-col">
-                <img src="images/logo.png" alt="AraucaCine" class="footer-logo">
+                <img src="images/logo.png" alt="AraucaCine" class="footer-logo" width="30" height="30">
                 <p>ONG cultural dedicada a la transformación social a través del cine en Arauca, Colombia.</p>
             </div>
             <div class="footer-col">
