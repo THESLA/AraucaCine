@@ -289,6 +289,18 @@ h2 {
     transform: translateY(0);
 }
 
+.videos {
+    padding: 6rem 2rem;
+    background: #0a0a0a;
+}
+
+.videos-container {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
 .help {
     padding: 6rem 2rem;
     background: #0a0a0a;
@@ -528,7 +540,7 @@ h2 {
         margin-bottom: 2rem;
     }
 
-    .about, .programs, .gallery, .help, .contact {
+    .about, .programs, .gallery, .videos, .help, .contact {
         padding: 3rem 1rem;
     }
 
