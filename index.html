@@ -18,7 +18,7 @@
     <meta name="twitter:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia.">
     <meta name="twitter:image" content="https://THESLA.github.io/AraucaCine/images/logo.png">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
     <link rel="preconnect" href="https://www.tiktok.com">
     <link rel="preconnect" href="https://cdn.tiktok.com">
     <link rel="preconnect" href="https://formspree.io">
@@ -30,7 +30,7 @@
     <header>
         <nav>
             <div class="logo"><a href="#inicio"><img src="images/logo.png" alt="AraucaCine"></a></div>
-            <button class="hamburger" aria-label="Menú">&#9776;</button>
+            <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
@@ -248,6 +248,7 @@
 
         hamburger.addEventListener('click', () => {
             navUl.classList.toggle('open');
+            hamburger.classList.toggle('open');
         });
 
         function showSection(id) {
@@ -256,9 +257,12 @@
                     if (s.id === id) {
                         s.style.display = 'flex';
                         s.classList.add('active');
+                        s.classList.remove('section-enter');
+                        void s.offsetHeight;
+                        s.classList.add('section-enter');
                     } else {
                         s.style.display = 'none';
-                        s.classList.remove('active');
+                        s.classList.remove('active', 'section-enter');
                     }
                 });
                 footer.style.display = id === 'contacto' ? 'block' : 'none';
@@ -267,6 +271,7 @@
                 footer.style.display = 'block';
             }
             navUl.classList.remove('open');
+            hamburger.classList.remove('open');
         }
 
         navLinks.forEach(link => {
@@ -278,21 +283,85 @@
             });
         });
 
-        document.querySelectorAll('.btn').forEach(btn => {
-            if (btn.getAttribute('href') && btn.getAttribute('href').startsWith('#')) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const id = this.getAttribute('href').replace('#', '');
-                    showSection(id);
-                    history.pushState(null, '', '#' + id);
-                });
-            }
+        document.querySelectorAll('.btn[href^="#"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = this.getAttribute('href').replace('#', '');
+                showSection(id);
+                history.pushState(null, '', '#' + id);
+            });
         });
 
         if (isDesktop()) {
             const hash = window.location.hash.replace('#', '');
             sections.forEach(s => s.style.display = 'none');
             showSection(hash || 'inicio');
+        }
+
+        window.addEventListener('popstate', () => {
+            if (isDesktop()) {
+                const hash = window.location.hash.replace('#', '');
+                showSection(hash || 'inicio');
+            }
+        });
+
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.style.cssText = `position:absolute;border-radius:50%;background:rgba(255,255,255,0.3);width:20px;height:20px;margin-left:-10px;margin-top:-10px;left:${e.clientX-rect.left}px;top:${e.clientY-rect.top}px;transform:scale(0);animation:rippleAnim 0.5s ease-out forwards;pointer-events:none;`;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 500);
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.about-card, .program-card, .help-card, .gallery-item');
+        if (!isDesktop()) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealElements.forEach(el => {
+                el.classList.add('reveal');
+                observer.observe(el);
+            });
+        }
+
+        const form = document.querySelector('.contact-form');
+        const formStatus = document.querySelector('.form-status');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(form);
+                const btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Enviando…';
+                formStatus.textContent = '';
+                formStatus.className = 'form-status';
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (res.ok) {
+                        formStatus.textContent = '✓ Mensaje enviado con éxito. Gracias por contactarnos.';
+                        formStatus.className = 'form-status success';
+                        form.reset();
+                    } else {
+                        throw new Error('Error');
+                    }
+                } catch {
+                    formStatus.textContent = '✗ Hubo un error. Intenta de nuevo o escríbenos directamente.';
+                    formStatus.className = 'form-status error';
+                }
+                btn.disabled = false;
+                btn.textContent = 'Enviar Mensaje';
+            });
         }
 
         const lightbox = document.getElementById('lightbox');
@@ -328,7 +397,6 @@
 
         galleryItems.forEach((img, i) => {
             img.addEventListener('click', () => openLightbox(i));
-            img.style.cursor = 'pointer';
         });
 
         lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);

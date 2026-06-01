@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+@keyframes rippleAnim {
+    to { transform: scale(4); opacity: 0; }
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     background: #000;
@@ -104,6 +120,7 @@ nav a:focus-visible,
     width: auto;
     margin-bottom: 2rem;
     filter: brightness(0) invert(1);
+    animation: float 4s ease-in-out infinite;
 }
 
 .hero-content p {
@@ -122,10 +139,15 @@ nav a:focus-visible,
     color: #000;
     text-decoration: none;
     font-size: 1rem;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
     border: none;
     cursor: pointer;
     margin: 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.btn:active {
+    transform: scale(0.97);
 }
 
 .btn:hover {
@@ -567,12 +589,16 @@ h2 {
     display: none;
     background: none;
     border: none;
-    color: #fff;
-    font-size: 1.8rem;
     cursor: pointer;
     padding: 0.3rem 0.5rem;
     z-index: 300;
     margin-left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
 }
 
 .skip-link {
@@ -589,6 +615,75 @@ h2 {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ===== SECTION TRANSITION (DESKTOP) ===== */
+.section-enter {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ===== HAMBURGER ANIMATION ===== */
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.3s, opacity 0.3s;
+    border-radius: 1px;
+}
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== CARD HOVER ENHANCEMENTS ===== */
+.about-card, .program-card, .help-card {
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.about-card:hover, .program-card:hover, .help-card:hover {
+    border-color: #333;
+}
+
+/* ===== LIGHTBOX ENTRANCE ===== */
+.lightbox.open .lightbox-img {
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===== NAV ACTIVE LINK ===== */
+nav a.active-link {
+    color: #fff;
+}
+
+/* ===== FORM STATUS ===== */
+.form-status {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    transition: opacity 0.3s;
+}
+.form-status.success {
+    color: #4ade80;
+}
+.form-status.error {
+    color: #f87171;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -616,7 +711,7 @@ h2 {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
     }
 
     body {
