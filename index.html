@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AraucaCine - ONG Cultural</title>
     <meta name="theme-color" content="#000000">
+    <meta name="description" content="AraucaCine - ONG cultural dedicada a la transformación social a través del cine y la cultura audiovisual en Arauca, Colombia.">
+    <meta name="keywords" content="cine, cultura, ONG, Arauca, Colombia, cine comunitario, talleres audiovisuales, transformación social">
+    <meta name="author" content="AraucaCine">
+    <meta property="og:title" content="AraucaCine - ONG Cultural">
+    <meta property="og:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia.">
+    <meta property="og:image" content="https://THESLA.github.io/AraucaCine/images/logo.png">
+    <meta property="og:url" content="https://THESLA.github.io/AraucaCine/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AraucaCine - ONG Cultural">
+    <meta name="twitter:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia.">
+    <meta name="twitter:image" content="https://THESLA.github.io/AraucaCine/images/logo.png">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="styles.css?v=2">
     <link rel="preconnect" href="https://www.tiktok.com">
     <link rel="preconnect" href="https://cdn.tiktok.com">
+    <link rel="preconnect" href="https://formspree.io">
+    <link rel="dns-prefetch" href="https://formspree.io">
+    <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
 </head>
 <body>
     <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
@@ -175,7 +190,7 @@
                     <a href="https://youtube.com/@arauacine" class="social-link" target="_blank" rel="noopener">YouTube</a>
                 </div>
             </div>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez…" autocomplete="name" required>
                 <label for="email">Correo electrónico</label>
@@ -184,7 +199,7 @@
                 <input type="text" id="asunto" name="asunto" placeholder="Ej: Quiero colaborar…" autocomplete="off">
                 <label for="mensaje">Mensaje</label>
                 <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje…" rows="5" required spellcheck="true"></textarea>
-                <div aria-live="polite"></div>
+                <div aria-live="polite" class="form-status"></div>
                 <button type="submit" class="btn">Enviar Mensaje</button>
             </form>
         </div>
@@ -214,6 +229,14 @@
             <p>&copy; 2026 AraucaCine. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Vista ampliada de imagen" aria-modal="true" hidden>
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Anterior">&#8249;</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Siguiente">&#8250;</button>
+        <img class="lightbox-img" src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
 
     <script>
         const sections = document.querySelectorAll('section');
@@ -271,6 +294,57 @@
             sections.forEach(s => s.style.display = 'none');
             showSection(hash || 'inicio');
         }
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            const items = Array.from(galleryItems);
+            currentIndex = index;
+            const img = items[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            const overlay = img.parentElement.querySelector('.gallery-overlay');
+            lightboxCaption.textContent = overlay ? overlay.textContent : '';
+            lightbox.hidden = false;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            const items = Array.from(galleryItems);
+            currentIndex = (currentIndex + direction + items.length) % items.length;
+            openLightbox(currentIndex);
+        }
+
+        galleryItems.forEach((img, i) => {
+            img.addEventListener('click', () => openLightbox(i));
+            img.style.cursor = 'pointer';
+        });
+
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
+        lightbox.querySelector('.lightbox-next').addEventListener('click', () => navigateLightbox(1));
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
     </script>
 </body>
 </html>
