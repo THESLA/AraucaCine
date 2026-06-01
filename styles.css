@@ -100,7 +100,7 @@ nav a:focus-visible,
 }
 
 .hero-logo {
-    height: 150px;
+    height: 250px;
     width: auto;
     margin-bottom: 2rem;
     filter: brightness(0) invert(1);
@@ -561,7 +561,7 @@ h2 {
     }
 
     .hero-logo {
-        height: 100px;
+        height: 180px;
     }
 
     .hero-content p {
