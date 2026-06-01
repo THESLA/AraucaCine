@@ -34,15 +34,15 @@
         <nav>
             <div class="logo"><a href="#inicio"><img src="images/logo.png" alt="AraucaCine"></a></div>
             <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#programas">Programas</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#ayudar">Cómo Ayudar</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#programas" class="nav-link">Programas</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="#ayudar" class="nav-link">Cómo Ayudar</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
         </nav>
     </header>
 
@@ -244,17 +244,29 @@
     <script>
         const sections = document.querySelectorAll('section');
         const footer = document.getElementById('footer-section');
-        const navLinks = document.querySelectorAll('nav a, .footer-col a');
+        const navLinks = document.querySelectorAll('.nav-link, .footer-col a');
+        const navContainer = document.querySelector('.nav-links');
         const hamburger = document.querySelector('.hamburger');
-        const navUl = document.querySelector('nav ul');
         const isDesktop = () => window.innerWidth > 768;
 
         hamburger.addEventListener('click', () => {
-            navUl.classList.toggle('open');
+            navContainer.classList.toggle('open');
             hamburger.classList.toggle('open');
         });
 
+        function setActiveNav(id) {
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.replace('#', '') === id) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
         function showSection(id) {
+            setActiveNav(id);
             if (isDesktop()) {
                 sections.forEach(s => {
                     if (s.id === id) {
@@ -273,7 +285,7 @@
                 document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
                 footer.style.display = 'block';
             }
-            navUl.classList.remove('open');
+            navContainer.classList.remove('open');
             hamburger.classList.remove('open');
         }
 

@@ -81,24 +81,32 @@ nav {
     filter: brightness(0) invert(1);
 }
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.25rem;
 }
 
-nav a {
+.nav-link {
     color: #9a9082;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
-nav a:hover {
+.nav-link:hover {
     color: #FFFFFF;
+    background: rgba(231,76,60,0.1);
 }
 
-nav a:focus-visible,
+.nav-link.active {
+    color: #FFFFFF;
+    background: #E74C3C;
+}
+
+.nav-link:focus-visible,
 .btn:focus-visible,
 .social-link:focus-visible,
 .hamburger:focus-visible {
@@ -724,7 +732,7 @@ nav a.active-link {
         touch-action: manipulation;
     }
 
-    nav ul {
+    .nav-links {
         display: none;
         position: fixed;
         top: 0;
@@ -735,16 +743,17 @@ nav a.active-link {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
         z-index: 200;
     }
 
-    nav ul.open {
+    .nav-links.open {
         display: flex;
     }
 
-    nav ul li a {
+    .nav-link {
         font-size: 1.3rem;
+        padding: 0.8rem 2rem;
     }
 
     .hero-logo {
