@@ -600,6 +600,15 @@ h2 {
     font-size: 0.8rem;
 }
 
+.visit-counter {
+    margin-left: 1rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid #2a2520;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #9a9082;
+}
+
 .hamburger {
     display: none;
     background: none;

@@ -229,7 +229,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 AraucaCine. Todos los derechos reservados.</p>
+            <p>&copy; 2026 AraucaCine. Todos los derechos reservados. <span class="visit-counter">Visitas: <span id="visitCount">0</span></span></p>
         </div>
     </footer>
 
@@ -428,6 +428,24 @@
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
         });
+
+        // Visit counter
+        (async function() {
+            const key = 'arauacine_web';
+            try {
+                // Try to increment via CountAPI
+                const res = await fetch('https://api.countapi.xyz/hit/arauacine-web/visits');
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('visitCount').textContent = data.value.toLocaleString();
+                }
+            } catch {
+                // Fallback: localStorage counter
+                let count = parseInt(localStorage.getItem('arauacine_visits') || '0') + 1;
+                localStorage.setItem('arauacine_visits', count.toString());
+                document.getElementById('visitCount').textContent = count;
+            }
+        })();
     </script>
 </body>
 </html>
