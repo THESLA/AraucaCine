@@ -417,20 +417,21 @@
 
         // Visit counter
         (async function() {
-            const key = 'arauacine_web';
+            const el = document.getElementById('visitCount');
             try {
-                // Try to increment via CountAPI
-                const res = await fetch('https://api.countapi.xyz/hit/arauacine-web/visits');
+                const res = await fetch('https://api.counterapi.dev/v1/arauacine/visits/increment');
                 if (res.ok) {
                     const data = await res.json();
-                    document.getElementById('visitCount').textContent = data.value.toLocaleString();
+                    el.textContent = data.count.toLocaleString();
+                    return;
                 }
-            } catch {
-                // Fallback: localStorage counter
-                let count = parseInt(localStorage.getItem('arauacine_visits') || '0') + 1;
-                localStorage.setItem('arauacine_visits', count.toString());
-                document.getElementById('visitCount').textContent = count;
+            } catch (e) {
+                console.warn('Counter API failed:', e);
             }
+            // Fallback: localStorage
+            let c = parseInt(localStorage.getItem('ac_visits') || '0') + 1;
+            localStorage.setItem('ac_visits', c.toString());
+            el.textContent = c;
         })();
     </script>
 </body>
