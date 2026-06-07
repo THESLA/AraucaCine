@@ -199,6 +199,7 @@ nav {
     margin-bottom: 2rem;
     filter: brightness(0) invert(1);
     animation: float 4s ease-in-out infinite;
+    image-rendering: auto;
 }
 
 .hero-content p {
@@ -381,6 +382,8 @@ h2 {
     object-fit: cover;
     transition: transform 0.5s;
     display: block;
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
 }
 
 .gallery-item:hover img {
