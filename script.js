@@ -214,3 +214,10 @@ document.addEventListener('keydown', e => {
   localStorage.setItem('ac_visits', c.toString());
   el.textContent = c;
 })();
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
