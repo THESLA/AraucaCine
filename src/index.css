@@ -74,11 +74,11 @@ body {
 
 .logo-hero {
   filter: brightness(0) invert(1);
-  width: 8rem;
-  height: 8rem;
+  width: 16rem;
+  height: 16rem;
 }
 .light .logo-hero {
   filter: none;
-  width: 5rem;
-  height: 5rem;
+  width: 10rem;
+  height: 10rem;
 }
