@@ -35,7 +35,7 @@ export default function Gallery() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Galería</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {images.map((img, i) => (
-            <div key={i} className="relative group cursor-pointer overflow-hidden rounded-lg" onClick={() => open(i)}>
+            <div key={i} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md shadow-black/15" onClick={() => open(i)}>
               <img src={img.src} alt={img.alt} width={600} height={400} loading="lazy"
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">

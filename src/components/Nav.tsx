@@ -24,7 +24,7 @@ export default function Nav() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border shadow-lg shadow-black/10">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#inicio" onClick={e => handleClick(e, "#inicio")}>
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
@@ -49,7 +49,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
               className="text-sm text-foreground/80 hover:text-accent transition-colors">

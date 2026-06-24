@@ -30,8 +30,8 @@ export default function Programs() {
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">Nuestros Programas</h2>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
           {programs.map(p => (
-            <div key={p.title} className="group flex gap-5 items-start p-5 rounded-xl hover:bg-card transition-colors duration-300 -mx-5">
-              <div className="w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-cover bg-center"
+            <div key={p.title} className="group flex gap-5 items-start p-5 rounded-xl hover:bg-card hover:shadow-md hover:shadow-black/10 transition-all duration-300 -mx-5">
+              <div className="w-24 h-24 shrink-0 rounded-lg overflow-hidden bg-cover bg-center shadow-md shadow-black/15"
                 style={{ background: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('${p.img}') center/cover` }}
               />
               <div>
