@@ -13,6 +13,10 @@
   --color-muted: #8a7f76;
   --color-border: #2a2520;
   --color-hero-overlay: rgba(10, 8, 6, 0.92);
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
 }
 
 .light {
@@ -34,6 +38,28 @@ body {
   color: var(--color-foreground);
 }
 
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.25s ease;
+}
+.nav-underline:hover::after {
+  width: 100%;
+}
+
 @keyframes rippleAnim {
   to { transform: scale(4); opacity: 0; }
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
 }

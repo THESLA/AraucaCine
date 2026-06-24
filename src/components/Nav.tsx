@@ -33,7 +33,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-6">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm text-foreground/80 hover:text-accent transition-colors">
+              className="nav-underline text-sm text-foreground/80 hover:text-accent transition-colors">
               {l.label}
             </a>
           ))}
