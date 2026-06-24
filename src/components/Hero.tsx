@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="text-center px-4 z-10 max-w-3xl">
         <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
         <h1 className="sr-only">AraucaCine</h1>
-        <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed mb-10">
+        <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed mb-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
           Transformando vidas a través del cine y la cultura en Arauca
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
