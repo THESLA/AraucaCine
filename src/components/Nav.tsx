@@ -28,7 +28,7 @@ export default function Nav() {
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#inicio" onClick={e => handleClick(e, "#inicio")} className="flex items-center gap-2">
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
-          <span className="text-sm font-semibold text-foreground">AraucaCine</span>
+          <span className="text-foreground" style={{ fontSize: "1.45rem", fontFamily: "'Arial Black', Arial, sans-serif" }}>AraucaCine</span>
         </a>
 
         <div className="hidden md:flex items-center gap-6">
