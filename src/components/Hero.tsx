@@ -7,7 +7,7 @@ export default function Hero() {
         background: "linear-gradient(135deg, rgba(0,126,255,0.85), rgba(0,80,180,0.4)), url('images/hero.jpg') center/cover no-repeat"
       }}>
       <div className="text-center px-4 z-10 max-w-3xl">
-        <img src="images/logo.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
+        <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
         <h1 className="sr-only">AraucaCine</h1>
         <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed mb-10">
           Transformando vidas a través del cine y la cultura en Arauca
