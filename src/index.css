@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Open Sans", "Inter", sans-serif;
+  --color-background: #0a0806;
+  --color-foreground: #f5f0eb;
+  --color-card: #1a1512;
+  --color-card-foreground: #f5f0eb;
+  --color-accent: #c8a96e;
+  --color-accent-hover: #b8974d;
+  --color-muted: #8a7f76;
+  --color-border: #2a2520;
+  --color-hero-overlay: rgba(10, 8, 6, 0.92);
+}
+
+.light {
+  --color-background: #f8f6f3;
+  --color-foreground: #1a1512;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1512;
+  --color-border: #e0dbd5;
+  --color-muted: #6b6259;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", "Inter", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}

@@ -1,245 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AraucaCine - ONG Cultural</title>
-    <meta name="theme-color" content="#0a0806">
-    <meta name="description" content="AraucaCine - ONG cultural dedicada a la transformación social a través del cine y la cultura audiovisual en Arauca, Colombia.">
-    <meta name="keywords" content="cine, cultura, ONG, Arauca, Colombia, cine comunitario, talleres audiovisuales, transformación social">
-    <meta name="author" content="AraucaCine">
-    <meta property="og:title" content="AraucaCine - ONG Cultural">
-    <meta property="og:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia.">
-    <meta property="og:image" content="https://THESLA.github.io/AraucaCine/images/logo.png">
-    <meta property="og:url" content="https://THESLA.github.io/AraucaCine/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AraucaCine - ONG Cultural">
-    <meta name="twitter:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia.">
-    <meta name="twitter:image" content="https://THESLA.github.io/AraucaCine/images/logo.png">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=5">
-    <link rel="preconnect" href="https://www.tiktok.com">
-    <link rel="preconnect" href="https://cdn.tiktok.com">
-    <link rel="preconnect" href="https://formspree.io">
-    <link rel="dns-prefetch" href="https://formspree.io">
-    <link rel="preconnect" href="https://api.counterapi.dev">
-    <link rel="preconnect" href="https://facebook.com">
-    <link rel="preconnect" href="https://instagram.com">
-    <link rel="dns-prefetch" href="https://youtube.com">
-    <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <div id="loader" class="loader"><div class="spinner"></div></div>
+    <meta name="theme-color" content="#0a0806" />
+    <meta name="description" content="AraucaCine - ONG cultural dedicada a la transformación social a través del cine y la cultura audiovisual en Arauca, Colombia." />
+    <meta name="keywords" content="cine, cultura, ONG, Arauca, Colombia, cine comunitario, talleres audiovisuales, transformación social" />
+    <meta property="og:title" content="AraucaCine - ONG Cultural" />
+    <meta property="og:description" content="Transformando vidas a través del cine y la cultura en Arauca, Colombia." />
+    <meta property="og:image" content="https://THESLA.github.io/AraucaCine/images/logo.png" />
+    <meta property="og:url" content="https://THESLA.github.io/AraucaCine/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://api.counterapi.dev" />
 
-    <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
-    <header>
-        <nav>
-            <div class="logo"><a href="#inicio"><img src="images/logo.png" alt="AraucaCine"></a></div>
-            <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
-            <div class="nav-links">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#nosotros" class="nav-link">Nosotros</a>
-                <a href="#programas" class="nav-link">Programas</a>
-                <a href="#galeria" class="nav-link">Galería</a>
-                <a href="#videos" class="nav-link">Videos</a>
-                <a href="#ayudar" class="nav-link">Cómo Ayudar</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-                <button class="theme-toggle" aria-label="Cambiar tema">&#9790;</button>
-            </div>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero" style="background: linear-gradient(135deg, rgba(10,8,6,0.92), rgba(20,16,12,0.6)), url('images/hero.jpg') center/cover no-repeat;">
-        <div class="hero-content">
-            <h1><img src="images/logo.png" alt="AraucaCine" class="hero-logo" width="100" height="100"></h1>
-            <p>Transformando vidas a través del cine y la cultura en Arauca</p>
-            <a href="#nosotros" class="btn">Conócenos</a>
-            <a href="#ayudar" class="btn btn-secondary">Quiero Ayudar</a>
-        </div>
-    </section>
-
-    <section id="nosotros" class="about">
-        <h2>Sobre Nosotros</h2>
-        <p class="section-desc">Somos una organización sin fines de lucro dedicada a promover el acceso al cine y las artes audiovisuales como herramientas de transformación social en el departamento de Arauca, Colombia.</p>
-        <div class="about-grid">
-            <div class="about-card">
-                <div class="icon" aria-hidden="true">&#127916;</div>
-                <h3>Misión</h3>
-                <p>Democratizar el acceso al cine y la cultura audiovisual en comunidades vulnerables de Arauca, fomentando la creatividad, el pensamiento crítico y la cohesión social.</p>
-            </div>
-            <div class="about-card">
-                <div class="icon" aria-hidden="true">&#128752;</div>
-                <h3>Visión</h3>
-                <p>Ser la organización cultural líder en la región de la Orinoquía, reconocida por su impacto social a través del cine comunitario y la formación audiovisual.</p>
-            </div>
-            <div class="about-card">
-                <div class="icon" aria-hidden="true">&#10084;</div>
-                <h3>Valores</h3>
-                <p>Inclusión, creatividad, respeto, solidaridad, compromiso social y sostenibilidad cultural en cada proyecto que emprendemos.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="programas" class="programs">
-        <h2>Nuestros Programas</h2>
-        <div class="programs-grid">
-            <div class="program-card">
-                <div class="program-img" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/prog1.jpg') center/cover;" role="img" aria-label="Cine Comunitario">
-                    <span class="program-icon" aria-hidden="true">&#127910;</span>
-                </div>
-                <h3>Cine Comunitario</h3>
-                <p>Funciones de cine gratuitas en barrios y veredas, llevando la magia del séptimo arte a comunidades con acceso limitado a salas de cine.</p>
-            </div>
-            <div class="program-card">
-                <div class="program-img" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/prog2.jpg') center/cover;" role="img" aria-label="Talleres Audiovisuales">
-                    <span class="program-icon" aria-hidden="true">&#128249;</span>
-                </div>
-                <h3>Talleres Audiovisuales</h3>
-                <p>Capacitación en producción audiovisual para jóvenes, enseñando guion, dirección, fotografía y edición como herramienta de expresión.</p>
-            </div>
-            <div class="program-card">
-                <div class="program-img" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/prog3.jpg') center/cover;" role="img" aria-label="Festival de Cine">
-                    <span class="program-icon" aria-hidden="true">&#127917;</span>
-                </div>
-                <h3>Festival de Cine</h3>
-                <p>Festival anual de cine independiente y documental que da visibilidad a realizadores locales e historias de la región de la Orinoquía.</p>
-            </div>
-            <div class="program-card">
-                <div class="program-img" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('images/prog4.jpg') center/cover;" role="img" aria-label="Formación Escolar">
-                    <span class="program-icon" aria-hidden="true">&#128218;</span>
-                </div>
-                <h3>Formación Escolar</h3>
-                <p>Programa educativo en escuelas públicas que utiliza el cine como herramienta pedagógica para fortalecer habilidades socioemocionales.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="gallery">
-        <h2>Galería</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/gallery1.jpg" alt="Taller de Producción 2025 - participantes aprendiendo edición" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Taller de Producción 2025</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery2.jpg" alt="Función de cine comunitario en Caño Limón al aire libre" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Cine Comunitario en Caño Limón</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery3.jpg" alt="Festival de Cine Orinoquía 2025 presentación" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Festival de Cine Orinoquía 2025</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery4.jpg" alt="Taller escolar en Arauquita niños aprendiendo cine" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Taller escolar en Arauquita</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery5.jpg" alt="Taller de Guion Creativo con jóvenes" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Taller de Guion Creativo</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery6.jpg" alt="Función de cine al aire libre en el Parque Arauca" width="600" height="400" loading="lazy">
-                <div class="gallery-overlay">Cine al Aire Libre - Parque Arauca</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="videos" class="videos">
-        <h2>Videos</h2>
-        <p class="section-desc">Síguenos en TikTok para más contenido</p>
-        <div class="videos-container">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@araucacine" data-unique-id="araucacine" data-embed-type="creator" style="max-width: 780px; min-width: 288px; margin: 0 auto;">
-                <section>
-                    <a target="_blank" href="https://www.tiktok.com/@araucacine?refer=creator_embed">@araucacine</a>
-                </section>
-            </blockquote>
-            <script async src="https://www.tiktok.com/embed.js"></script>
-        </div>
-    </section>
-
-    <section id="ayudar" class="help">
-        <h2>Cómo Ayudar</h2>
-        <p class="section-desc">Tu apoyo hace posible que sigamos transformando vidas a través del cine y la cultura.</p>
-        <div class="help-grid">
-            <div class="help-card">
-                <div class="help-icon" aria-hidden="true">&#128179;</div>
-                <h3>Donación</h3>
-                <p>Tus donaciones nos permiten comprar equipos, transportar proyectores y llegar a más comunidades.</p>
-                <button class="btn">Donar Ahora</button>
-            </div>
-            <div class="help-card">
-                <div class="help-icon" aria-hidden="true">&#129309;</div>
-                <h3>Voluntariado</h3>
-                <p>Únete como voluntario en nuestros talleres, funciones y eventos. No necesitas experiencia previa.</p>
-                <button class="btn">Ser Voluntario</button>
-            </div>
-            <div class="help-card">
-                <div class="help-icon" aria-hidden="true">&#128640;</div>
-                <h3>Aliados</h3>
-                <p>Si representas una organización o empresa, podemos desarrollar proyectos conjuntos de impacto cultural.</p>
-                <button class="btn">Ser Aliado</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contact">
-        <h2>Contacto</h2>
-        <p class="section-desc">Estaremos encantados de escucharte. Escríbenos o visítanos.</p>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <p><strong>Email:</strong> jamesraveloc52@gmail.com</p>
-                <p><strong>Teléfono:</strong> 3166976348</p>
-                <p><strong>Dirección:</strong> Cra 30a 12 - 44 Vergel, Tame - Arauca</p>
-                <div class="social">
-                    <a href="https://facebook.com/arauacine" class="social-link" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://instagram.com/arauacine" class="social-link" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://youtube.com/@arauacine" class="social-link" target="_blank" rel="noopener">YouTube</a>
-                </div>
-                <div class="contact-map">
-                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-71.747%2C6.445%2C-71.727%2C6.465&amp;layer=mapnik&amp;marker=6.455%2C-71.737" width="100%" height="220" style="border:1px solid var(--border);border-radius:6px;margin-top:1.5rem;" loading="lazy" title="Cra 30a 12-44 Vergel, Tame - Arauca"></iframe>
-                    <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;">
-                        <a href="https://www.openstreetmap.org/?mlat=6.455&amp;mlon=-71.737#map=17/6.455/-71.737" target="_blank" rel="noopener" style="color:var(--accent);">Ver mapa más grande</a>
-                    </p>
-                </div>
-            </div>
-            <form class="contact-form" action="https://formspree.io/f/mojbojgj" method="POST" novalidate>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez…" autocomplete="name" required>
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" placeholder="ej: correo@ejemplo.com…" autocomplete="email" required spellcheck="false">
-                <label for="asunto">Asunto</label>
-                <input type="text" id="asunto" name="asunto" placeholder="Ej: Quiero colaborar…" autocomplete="off">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje…" rows="5" required spellcheck="true"></textarea>
-                <div aria-live="polite" class="form-status"></div>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-
-    <footer id="footer-section">
-        <div class="footer-inner">
-            <p class="footer-copy">&copy; 2026 AraucaCine. Todos los derechos reservados.</p>
-            <div class="footer-visits">
-                <span class="fv-icon" aria-hidden="true">&#128065;</span>
-                <span class="fv-number" id="visitCount">0</span>
-                <span class="fv-label">visitas</span>
-            </div>
-        </div>
-    </footer>
-
-    <div id="lightbox" class="lightbox" role="dialog" aria-label="Vista ampliada de imagen" aria-modal="true" hidden>
-        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
-        <button class="lightbox-nav lightbox-prev" aria-label="Anterior">&#8249;</button>
-        <button class="lightbox-nav lightbox-next" aria-label="Siguiente">&#8250;</button>
-        <img class="lightbox-img" src="" alt="">
-        <p class="lightbox-caption"></p>
-    </div>
-</body>
+  </head>
+  <body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
