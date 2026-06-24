@@ -47,7 +47,7 @@ export default function Gallery() {
       </div>
 
       <Dialog open={idx !== null} onOpenChange={v => !v && close()}>
-        <DialogContent className="max-w-4xl bg-black/95 border-border p-2">
+        <DialogContent className="max-w-4xl bg-background/95 border-border p-2">
           {idx !== null && (
             <div className="relative flex items-center justify-center">
               <button onClick={prev} className="absolute left-2 z-10 text-white/80 hover:text-white text-3xl cursor-pointer" aria-label="Anterior">‹</button>
