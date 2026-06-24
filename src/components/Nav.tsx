@@ -27,7 +27,7 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#inicio" onClick={e => handleClick(e, "#inicio")}>
-          <img src="images/logo.png" alt="AraucaCine" className="h-10 w-10" />
+          <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-6">

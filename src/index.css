@@ -63,3 +63,22 @@ body {
   background: var(--color-accent);
   color: var(--color-background);
 }
+
+/* Logo theme-aware */
+.logo-nav {
+  filter: brightness(0) invert(1);
+}
+.light .logo-nav {
+  filter: none;
+}
+
+.logo-hero {
+  filter: brightness(0) invert(1);
+  width: 8rem;
+  height: 8rem;
+}
+.light .logo-hero {
+  filter: none;
+  width: 5rem;
+  height: 5rem;
+}
