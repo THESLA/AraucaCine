@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-2">
-            <img src="images/logo.png" alt="AraucaCine" className="w-8 h-8" />
+            <img src="images/logo.png" alt="AraucaCine" className="logo-nav w-8 h-8" />
             <span className="text-sm font-semibold">AraucaCine</span>
           </div>
           <VisitCounter />

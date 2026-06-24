@@ -6,10 +6,10 @@ export function useVisitCounter() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('https://api.counterapi.dev/v1/arauacine/visits/increment')
+        const res = await fetch('https://countapi.mileshilliard.com/api/v1/hit/arauacine-visits')
         if (res.ok) {
           const data = await res.json()
-          setCount(data.count.toLocaleString())
+          setCount(Number(data.value))
           return
         }
       } catch {}
