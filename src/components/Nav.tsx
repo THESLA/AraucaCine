@@ -52,7 +52,7 @@ export default function Nav({ page, setPage }: NavProps) {
           <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
               className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
