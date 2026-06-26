@@ -65,6 +65,11 @@ body {
   color: var(--color-background);
 }
 
+/* Nav hover bone-white */
+.nav-hover:hover {
+  color: #f5f0e1;
+}
+
 /* Logo theme-aware */
 .logo-nav {
   filter: brightness(0) invert(1);
