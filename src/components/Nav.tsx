@@ -59,7 +59,7 @@ export default function Nav({ page, setPage }: NavProps) {
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
               className={`nav-underline text-sm text-foreground/80 nav-hover transition-colors ${l.label === "Noticias" ? "nav-alert" : ""}`}>
-              {l.label}
+              {l.label}{l.label === "Noticias" && <span className="alert-dot" />}
             </a>
           ))}
           <ThemeToggle />
@@ -78,7 +78,7 @@ export default function Nav({ page, setPage }: NavProps) {
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
               className={`text-sm text-foreground/80 nav-hover transition-colors ${l.label === "Noticias" ? "nav-alert" : ""}`}>
-              {l.label}
+              {l.label}{l.label === "Noticias" && <span className="alert-dot" />}
             </a>
           ))}
         </div>
