@@ -53,6 +53,7 @@ body {
   transition: transform 0.25s ease;
 }
 .nav-underline:hover::after {
+  background: #FCC600;
   transform: translateX(-50%) scaleX(1);
 }
 
