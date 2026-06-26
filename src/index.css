@@ -87,8 +87,11 @@ body {
   content: '';
   position: absolute;
   inset: 0 -10px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 1);
   z-index: -1;
+}
+.nav-alert:hover {
+  color: #FCC600 !important;
 }
 .nav-alert .alert-dot {
   display: inline-block;
