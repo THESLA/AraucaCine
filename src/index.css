@@ -90,8 +90,8 @@ body {
   background: rgba(255, 255, 255, 1);
   z-index: -1;
 }
-.nav-alert:hover {
-  color: #FCC600 !important;
+.nav-alert.nav-hover:hover {
+  color: #FCC600;
 }
 .nav-alert .alert-dot {
   display: inline-block;
