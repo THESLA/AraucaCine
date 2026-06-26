@@ -83,13 +83,6 @@ body {
   height: 100%;
   animation: shakeAlert 8s ease-in-out infinite;
 }
-.nav-alert::before {
-  content: '';
-  position: absolute;
-  inset: 0 -10px;
-  background: rgba(255, 255, 255, 1);
-  z-index: -1;
-}
 .nav-alert.nav-hover:hover {
   color: #FCC600;
 }
