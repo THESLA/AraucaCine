@@ -31,7 +31,7 @@ export default function News({ setPage }: NewsProps) {
     <>
     <section id="noticias" className="min-h-screen pt-24 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">Noticias</h2>
             <p className="text-muted mt-2">Línea de tiempo de nuestras actividades</p>
@@ -39,6 +39,28 @@ export default function News({ setPage }: NewsProps) {
           <Button variant="secondary" onClick={() => { setPage("main"); window.scrollTo({ top: 0 }) }}>
             ← Volver
           </Button>
+        </div>
+
+        <div className="relative mb-16 bg-card/50 border border-border rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
+          <div className="relative p-8 md:p-12 text-center">
+            <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 tracking-widest uppercase">Cronología</span>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Nuestra Trayectoria</h3>
+            <p className="text-muted text-sm max-w-xl mx-auto mb-8">
+              Desde nuestros inicios, cada año ha sido una oportunidad para llevar el cine y la cultura a más comunidades de Arauca.
+            </p>
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              <div className="text-center">
+                <span className="block text-3xl md:text-4xl font-bold text-accent">2016</span>
+                <span className="text-[10px] text-muted tracking-widest uppercase">Inicio</span>
+              </div>
+              <div className="text-accent/30 text-2xl font-light">—</div>
+              <div className="text-center">
+                <span className="block text-3xl md:text-4xl font-bold text-accent">2026</span>
+                <span className="text-[10px] text-muted tracking-widest uppercase">Presente</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="relative">
