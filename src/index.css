@@ -75,20 +75,11 @@ body {
   4% { transform: translateX(0); }
 }
 
-.nav-alert {
-  color: #FCC600 !important;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100%;
+.shake-link {
   animation: shakeAlert 8s ease-in-out infinite;
 }
-.nav-alert.nav-hover:hover {
-  color: #FCC600;
-  -webkit-text-stroke: none;
-  text-shadow: none;
-}
-.nav-alert .alert-dot {
+
+.alert-dot {
   display: inline-block;
   width: 6px;
   height: 6px;
