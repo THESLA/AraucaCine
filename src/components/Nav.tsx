@@ -45,7 +45,7 @@ export default function Nav({ page, setPage }: NavProps) {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-background backdrop-blur-md border-b border-border shadow-lg shadow-white/10">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border shadow-lg shadow-black/10">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#inicio" onClick={handleLogo} className="flex items-center gap-2">
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
