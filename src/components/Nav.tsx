@@ -51,7 +51,7 @@ export default function Nav({ page, setPage }: NavProps) {
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
           <div>
             <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
-            <span className="block text-[10px] text-muted leading-none mt-0.5">{__COMMIT_HASH__}</span>
+            <span className="block text-[10px] text-muted leading-none -mt-0.5">{__COMMIT_HASH__}</span>
           </div>
         </a>
 
