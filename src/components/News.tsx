@@ -41,28 +41,6 @@ export default function News({ setPage }: NewsProps) {
           </Button>
         </div>
 
-        <div className="relative mb-16 bg-card/50 border border-border rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
-          <div className="relative p-8 md:p-12 text-center">
-            <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 tracking-widest uppercase">Cronología</span>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">Nuestra Trayectoria</h3>
-            <p className="text-muted text-sm max-w-xl mx-auto mb-8">
-              Desde nuestros inicios, cada año ha sido una oportunidad para llevar el cine y la cultura a más comunidades de Arauca.
-            </p>
-            <div className="flex items-center justify-center gap-4 md:gap-8">
-              <div className="text-center">
-                <span className="block text-3xl md:text-4xl font-bold text-accent">2016</span>
-                <span className="text-[10px] text-muted tracking-widest uppercase">Inicio</span>
-              </div>
-              <div className="text-accent/30 text-2xl font-light">—</div>
-              <div className="text-center">
-                <span className="block text-3xl md:text-4xl font-bold text-accent">2026</span>
-                <span className="text-[10px] text-muted tracking-widest uppercase">Presente</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="relative">
           <div className="absolute left-[23px] md:left-1/2 top-8 bottom-8 w-0.5 bg-gradient-to-b from-accent via-accent/60 to-accent/20 md:-translate-x-px" />
 
@@ -102,6 +80,28 @@ export default function News({ setPage }: NewsProps) {
               </div>
             )
           })}
+        </div>
+
+        <div className="relative mt-16 bg-card/50 border border-border rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
+          <div className="relative p-8 md:p-12 text-center">
+            <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 tracking-widest uppercase">Cronología</span>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Nuestra Trayectoria</h3>
+            <p className="text-muted text-sm max-w-xl mx-auto mb-8">
+              Desde nuestros inicios, cada año ha sido una oportunidad para llevar el cine y la cultura a más comunidades de Arauca.
+            </p>
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              <div className="text-center">
+                <span className="block text-3xl md:text-4xl font-bold text-accent">2016</span>
+                <span className="text-[10px] text-muted tracking-widest uppercase">Inicio</span>
+              </div>
+              <div className="text-accent/30 text-2xl font-light">—</div>
+              <div className="text-center">
+                <span className="block text-3xl md:text-4xl font-bold text-accent">2026</span>
+                <span className="text-[10px] text-muted tracking-widest uppercase">Presente</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
