@@ -58,7 +58,7 @@ export default function Nav({ page, setPage }: NavProps) {
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
+              className={`nav-underline text-sm text-foreground/80 nav-hover transition-colors ${l.label === "Noticias" ? "nav-alert" : ""}`}>
               {l.label}
             </a>
           ))}
@@ -77,7 +77,7 @@ export default function Nav({ page, setPage }: NavProps) {
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm text-foreground/80 nav-hover transition-colors">
+              className={`text-sm text-foreground/80 nav-hover transition-colors ${l.label === "Noticias" ? "nav-alert" : ""}`}>
               {l.label}
             </a>
           ))}
