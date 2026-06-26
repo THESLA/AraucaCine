@@ -46,7 +46,7 @@ export default function News({ setPage }: NewsProps) {
             const left = i % 2 === 0
             const isLast = i === news.length - 1
             return (
-              <div key={item.title} className="relative flex items-start mb-16 last:mb-0">
+              <div key={item.title} className={`relative flex items-start mb-16 last:mb-0 ${left ? "" : "md:flex-row-reverse"}`}>
                 <div className={`flex-1 pl-14 md:pl-0 ${left ? "md:pr-14" : "md:pl-14"}`}>
                   <div className={`relative bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 ${left ? "md:text-right" : ""}`}>
                     <div className={`hidden md:block absolute top-6 w-4 h-0.5 bg-accent/40 ${left ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`} />
