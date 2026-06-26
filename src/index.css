@@ -68,7 +68,8 @@ body {
 /* Nav hover bone-white */
 .nav-hover:hover {
   color: #f5f0e1;
-  text-shadow: 0 0 1px currentColor, 0 0 0.5px currentColor;
+  -webkit-text-stroke: 0.7px #f5f0e1;
+  text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor;
 }
 
 /* Logo theme-aware */
