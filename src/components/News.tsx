@@ -1,4 +1,5 @@
 import { Button } from "./ui/button"
+import Footer from "./Footer"
 
 const news = [
   {
@@ -27,6 +28,7 @@ interface NewsProps {
 
 export default function News({ setPage }: NewsProps) {
   return (
+    <>
     <section id="noticias" className="min-h-screen pt-24 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-12">
@@ -81,5 +83,7 @@ export default function News({ setPage }: NewsProps) {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   )
 }
