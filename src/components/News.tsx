@@ -82,7 +82,7 @@ export default function News({ setPage }: NewsProps) {
           })}
         </div>
 
-        <div className="relative mt-16 bg-card/50 border border-border rounded-2xl overflow-hidden">
+        <div className="relative mt-16 mb-20 bg-card/50 border border-border rounded-2xl overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
           <div className="relative p-8 md:p-12 text-center">
             <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 tracking-widest uppercase">Cronología</span>
