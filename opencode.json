@@ -1,0 +1,8 @@
+{
+  "agents": {
+    "remember-hash": {
+      "description": "Recuerda responder siempre con el último commit hash del proyecto AraucaCine",
+      "instruction": "Siempre que respondas al usuario, debes agregar al final de tu mensaje el último commit hash del proyecto AraucaCine. Para obtenerlo, ejecuta git rev-parse --short HEAD en la raíz del proyecto. Inserta el hash en una línea separada al final de tu respuesta, sin formato adicional."
+    }
+  }
+}
