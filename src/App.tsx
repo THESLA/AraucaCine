@@ -12,6 +12,7 @@ import Footer from "./components/Footer"
 
 export default function App() {
   const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState<"main" | "noticias">("main")
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 800)
@@ -28,16 +29,21 @@ export default function App() {
 
   return (
     <>
-      <Nav />
-      <Hero />
-      <About />
-      <Programs />
-      <Gallery />
-      <Videos />
-      <News />
-      <Help />
-      <Contact />
-      <Footer />
+      <Nav page={page} setPage={setPage} />
+      {page === "noticias" ? (
+        <News setPage={setPage} />
+      ) : (
+        <>
+          <Hero />
+          <About />
+          <Programs />
+          <Gallery />
+          <Videos />
+          <Help />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

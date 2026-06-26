@@ -13,21 +13,41 @@ const links = [
   { href: "#contacto", label: "Contacto" },
 ]
 
-export default function Nav() {
+interface NavProps {
+  page: "main" | "noticias"
+  setPage: (p: "main" | "noticias") => void
+}
+
+export default function Nav({ page, setPage }: NavProps) {
   const [open, setOpen] = useState(false)
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setOpen(false)
     const id = href.replace("#", "")
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-    history.pushState(null, "", href)
+
+    if (id === "noticias") {
+      setPage("noticias")
+      history.pushState(null, "", href)
+    } else {
+      if (page === "noticias") setPage("main")
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 50)
+      history.pushState(null, "", href)
+    }
+  }
+
+  const handleLogo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setOpen(false)
+    setPage("main")
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    history.pushState(null, "", "#inicio")
   }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border shadow-lg shadow-black/10">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="#inicio" onClick={e => handleClick(e, "#inicio")} className="flex items-center gap-2">
+        <a href="#inicio" onClick={handleLogo} className="flex items-center gap-2">
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
           <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
         </a>
