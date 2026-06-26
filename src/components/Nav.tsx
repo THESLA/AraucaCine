@@ -49,7 +49,10 @@ export default function Nav({ page, setPage }: NavProps) {
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#inicio" onClick={handleLogo} className="flex items-center gap-2">
           <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
-          <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
+          <div>
+            <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
+            <span className="block text-[10px] text-muted leading-none mt-0.5">{__COMMIT_HASH__}</span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
