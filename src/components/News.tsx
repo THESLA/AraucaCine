@@ -90,15 +90,10 @@ export default function News({ setPage }: NewsProps) {
             <p className="text-muted text-sm max-w-xl mx-auto mb-8">
               Desde nuestros inicios, cada año ha sido una oportunidad para llevar el cine y la cultura a más comunidades de Arauca.
             </p>
-            <div className="flex items-center justify-center gap-4 md:gap-8">
+            <div className="flex items-center justify-center">
               <div className="text-center">
-                <span className="block text-3xl md:text-4xl font-bold text-accent">2016</span>
+                <span className="block text-4xl md:text-5xl font-bold text-accent">2016</span>
                 <span className="text-[10px] text-muted tracking-widest uppercase">Inicio</span>
-              </div>
-              <div className="text-accent/30 text-2xl font-light">—</div>
-              <div className="text-center">
-                <span className="block text-3xl md:text-4xl font-bold text-accent">2026</span>
-                <span className="text-[10px] text-muted tracking-widest uppercase">Presente</span>
               </div>
             </div>
           </div>
