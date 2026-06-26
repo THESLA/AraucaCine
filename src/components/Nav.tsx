@@ -56,13 +56,16 @@ export default function Nav({ page, setPage }: NavProps) {
         </a>
 
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
-          {links.map(l => (
+          {links.map(l => l.label === "Noticias" ? (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className={`nav-underline text-sm nav-hover transition-colors ${l.label === "Noticias" ? "shake-link" : "text-foreground/80"}`}
-              style={l.label === "Noticias" ? { color: "#FCC600" } : undefined}
-              onMouseEnter={l.label === "Noticias" ? e => (e.currentTarget as HTMLElement).style.color = "#FCC600" : undefined}
-              onMouseLeave={l.label === "Noticias" ? e => (e.currentTarget as HTMLElement).style.color = "#FCC600" : undefined}>
-              {l.label}{l.label === "Noticias" && <span className="alert-dot" />}
+              className="text-sm shake-link transition-colors"
+              style={{ color: "#FCC600" }}>
+              {l.label}<span className="alert-dot" />
+            </a>
+          ) : (
+            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
+              className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
+              {l.label}
             </a>
           ))}
           <ThemeToggle />
@@ -78,13 +81,16 @@ export default function Nav({ page, setPage }: NavProps) {
 
       {open && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
-          {links.map(l => (
+          {links.map(l => l.label === "Noticias" ? (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className={`text-sm nav-hover transition-colors ${l.label === "Noticias" ? "shake-link" : "text-foreground/80"}`}
-              style={l.label === "Noticias" ? { color: "#FCC600" } : undefined}
-              onMouseEnter={l.label === "Noticias" ? e => (e.currentTarget as HTMLElement).style.color = "#FCC600" : undefined}
-              onMouseLeave={l.label === "Noticias" ? e => (e.currentTarget as HTMLElement).style.color = "#FCC600" : undefined}>
-              {l.label}{l.label === "Noticias" && <span className="alert-dot" />}
+              className="text-sm shake-link transition-colors"
+              style={{ color: "#FCC600" }}>
+              {l.label}<span className="alert-dot" />
+            </a>
+          ) : (
+            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
+              className="text-sm text-foreground/80 nav-hover transition-colors">
+              {l.label}
             </a>
           ))}
         </div>
