@@ -85,13 +85,15 @@ body {
 }
 .nav-alert.nav-hover:hover {
   color: #FCC600;
+  -webkit-text-stroke: none;
+  text-shadow: none;
 }
 .nav-alert .alert-dot {
   display: inline-block;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ef4444;
+  background: #FCC600;
   margin-left: 4px;
   vertical-align: super;
   animation: pulse 2s ease-in-out infinite;
