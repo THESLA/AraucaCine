@@ -5,6 +5,7 @@ import About from "./components/About"
 import Programs from "./components/Programs"
 import Gallery from "./components/Gallery"
 import Videos from "./components/Videos"
+import News from "./components/News"
 import Help from "./components/Help"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -33,6 +34,7 @@ export default function App() {
       <Programs />
       <Gallery />
       <Videos />
+      <News />
       <Help />
       <Contact />
       <Footer />

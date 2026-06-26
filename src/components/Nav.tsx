@@ -8,6 +8,7 @@ const links = [
   { href: "#programas", label: "Programas" },
   { href: "#galeria", label: "Galería" },
   { href: "#videos", label: "Videos" },
+  { href: "#noticias", label: "Noticias" },
   { href: "#ayudar", label: "Cómo Ayudar" },
   { href: "#contacto", label: "Contacto" },
 ]
