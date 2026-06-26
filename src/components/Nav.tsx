@@ -34,7 +34,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-6">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="nav-underline text-sm text-foreground/80 nav-hover hover:font-bold transition-colors">
+              className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
               {l.label}
             </a>
           ))}
@@ -53,7 +53,7 @@ export default function Nav() {
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm text-foreground/80 nav-hover hover:font-bold transition-colors">
+              className="text-sm text-foreground/80 nav-hover transition-colors">
               {l.label}
             </a>
           ))}
