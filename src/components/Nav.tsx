@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { useNavigate, useLocation, Link } from "react-router-dom"
 import ThemeToggle from "./ThemeToggle"
 
 const links = [
@@ -8,40 +9,39 @@ const links = [
   { href: "#programas", label: "Programas" },
   { href: "#galeria", label: "Galería" },
   { href: "#videos", label: "Videos" },
-  { href: "#noticias", label: "Noticias" },
+  { href: "#noticias", label: "Noticias", isRoute: true },
   { href: "#ayudar", label: "Cómo Ayudar" },
   { href: "#contacto", label: "Contacto" },
 ]
 
-interface NavProps {
-  page: "main" | "noticias"
-  setPage: (p: "main" | "noticias") => void
-}
-
-export default function Nav({ page, setPage }: NavProps) {
+export default function Nav() {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setOpen(false)
     const id = href.replace("#", "")
 
-    if (id === "noticias") {
-      setPage("noticias")
-      history.pushState(null, "", href)
+    if (location.pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
     } else {
-      if (page === "noticias") setPage("main")
-      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 50)
-      history.pushState(null, "", href)
+      navigate("/")
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+      }, 100)
     }
   }
 
   const handleLogo = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     setOpen(false)
-    setPage("main")
-    window.scrollTo({ top: 0, behavior: "smooth" })
-    history.pushState(null, "", "#inicio")
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    } else {
+      navigate("/")
+    }
   }
 
   return (
@@ -56,18 +56,21 @@ export default function Nav({ page, setPage }: NavProps) {
         </a>
 
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
-          {links.map(l => l.label === "Noticias" ? (
-            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm shake-link transition-all duration-300 hover:scale-110"
-              style={{ color: "#FCC600" }}>
-              {l.label}<span className="alert-dot" />
-            </a>
-          ) : (
-            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map(l =>
+            l.isRoute ? (
+              <Link key={l.href} to="/noticias"
+                className="text-sm shake-link transition-all duration-300 hover:scale-110"
+                style={{ color: "#FCC600" }}
+                onClick={() => setOpen(false)}>
+                {l.label}<span className="alert-dot" />
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} onClick={e => handleSectionClick(e, l.href)}
+                className="nav-underline text-sm text-foreground/80 nav-hover transition-colors">
+                {l.label}
+              </a>
+            )
+          )}
           <ThemeToggle />
         </div>
 
@@ -81,18 +84,21 @@ export default function Nav({ page, setPage }: NavProps) {
 
       {open && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
-          {links.map(l => l.label === "Noticias" ? (
-            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm shake-link transition-all duration-300 hover:scale-110"
-              style={{ color: "#FCC600" }}>
-              {l.label}<span className="alert-dot" />
-            </a>
-          ) : (
-            <a key={l.href} href={l.href} onClick={e => handleClick(e, l.href)}
-              className="text-sm text-foreground/80 nav-hover transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map(l =>
+            l.isRoute ? (
+              <Link key={l.href} to="/noticias"
+                className="text-sm shake-link transition-all duration-300 hover:scale-110"
+                style={{ color: "#FCC600" }}
+                onClick={() => setOpen(false)}>
+                {l.label}<span className="alert-dot" />
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} onClick={e => handleSectionClick(e, l.href)}
+                className="text-sm text-foreground/80 nav-hover transition-colors">
+                {l.label}
+              </a>
+            )
+          )}
         </div>
       )}
     </header>

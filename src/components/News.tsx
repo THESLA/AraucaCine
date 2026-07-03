@@ -1,4 +1,5 @@
 import { Button } from "./ui/button"
+import { useNavigate } from "react-router-dom"
 import Footer from "./Footer"
 
 const news = [
@@ -28,11 +29,9 @@ const news = [
   }
 ]
 
-interface NewsProps {
-  setPage: (p: "main" | "noticias") => void
-}
+export default function News() {
+  const navigate = useNavigate()
 
-export default function News({ setPage }: NewsProps) {
   return (
     <>
     <section id="noticias" className="min-h-screen pt-24 px-4">
@@ -42,7 +41,7 @@ export default function News({ setPage }: NewsProps) {
             <h2 className="text-3xl md:text-4xl font-bold">Noticias</h2>
             <p className="text-muted mt-2">Línea de tiempo de nuestras actividades</p>
           </div>
-          <Button variant="secondary" onClick={() => { setPage("main"); window.scrollTo({ top: 0 }) }}>
+          <Button variant="secondary" onClick={() => { navigate("/"); window.scrollTo({ top: 0 }) }}>
             ← Volver
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Routes, Route } from "react-router-dom"
 import Nav from "./components/Nav"
 import Hero from "./components/Hero"
 import About from "./components/About"
@@ -10,9 +11,23 @@ import Help from "./components/Help"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
+function MainPage() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Programs />
+      <Gallery />
+      <Videos />
+      <Help />
+      <Contact />
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   const [loading, setLoading] = useState(true)
-  const [page, setPage] = useState<"main" | "noticias">("main")
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 800)
@@ -29,21 +44,11 @@ export default function App() {
 
   return (
     <>
-      <Nav page={page} setPage={setPage} />
-      {page === "noticias" ? (
-        <News setPage={setPage} />
-      ) : (
-        <>
-          <Hero />
-          <About />
-          <Programs />
-          <Gallery />
-          <Videos />
-          <Help />
-          <Contact />
-          <Footer />
-        </>
-      )}
+      <Nav />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/noticias" element={<News />} />
+      </Routes>
     </>
   )
 }
