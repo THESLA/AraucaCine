@@ -3,6 +3,12 @@ import Footer from "./Footer"
 
 const news = [
   {
+    img: "images/noche.jpg",
+    date: "1 Julio 2026",
+    title: "Taller de Sonido y Video de Calle: capturando la esencia de Arauca",
+    excerpt: "Salimos a las calles con micrófonos y cámaras para grabar el sonido ambiente, el murmullo de la gente y el ritmo cotidiano de Arauca. Una experiencia práctica de producción audiovisual comunitaria."
+  },
+  {
     img: "images/gallery1.jpg",
     date: "15 Junio 2026",
     title: "Taller de Producción Audiovisual llegó a 50 jóvenes",
