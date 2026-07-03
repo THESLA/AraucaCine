@@ -63,8 +63,7 @@ export default function News({ setPage }: NewsProps) {
                     <div className="p-5">
                       <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full mb-2">{item.date}</span>
                       <h3 className="text-base font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted leading-relaxed mb-4">{item.excerpt}</p>
-                      <Button variant="secondary" size="sm">Leer más</Button>
+                      <p className="text-sm text-muted leading-relaxed">{item.excerpt}</p>
                     </div>
                   </div>
                 </div>
