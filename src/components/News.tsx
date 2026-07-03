@@ -10,7 +10,7 @@ const news = [
     excerpt: "Salimos a las calles con micrófonos y cámaras para grabar el sonido ambiente, el murmullo de la gente y el ritmo cotidiano de Arauca. Una experiencia práctica de producción audiovisual comunitaria."
   },
   {
-    img: "images/gallery1.jpg",
+    img: "images/gallery3.jpg",
     date: "15 Junio 2026",
     title: "Taller de Producción Audiovisual llegó a 50 jóvenes",
     excerpt: "Durante dos semanas, jóvenes de Tame y Arauquita aprendieron guion, dirección y edición como herramientas de expresión y transformación social."
