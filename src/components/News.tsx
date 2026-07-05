@@ -16,6 +16,12 @@ const news = [
     excerpt: "Durante dos semanas, jóvenes de Tame y Arauquita aprendieron guion, dirección y edición como herramientas de expresión y transformación social."
   },
   {
+    img: "images/gallery2.jpg",
+    date: "4 Junio 2026",
+    title: "Acompañamos al jurado Ortex Creative en un casting",
+    excerpt: "Estuvimos junto al jurado Ortex Creative en las jornadas de casting para un nuevo proyecto. Una experiencia enriquecedora que refuerza el talento audiovisual local."
+  },
+  {
     img: "images/prog1.jpg",
     date: "28 Mayo 2026",
     title: "Cine Comunitario en Caño Limón: una noche mágica",
