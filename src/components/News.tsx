@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { Button } from "./ui/button"
 import { useNavigate } from "react-router-dom"
+import { Share2 } from "lucide-react"
 import Footer from "./Footer"
 
 const news = [
@@ -35,8 +37,40 @@ const news = [
   }
 ]
 
+const SITE_URL = "https://THESLA.github.io/AraucaCine/#/noticias"
+
 export default function News() {
   const navigate = useNavigate()
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
+
+  const handleShare = async (item: typeof news[number], index: number) => {
+    const shareData = {
+      title: `AraucaCine — ${item.title}`,
+      text: item.excerpt,
+      url: SITE_URL,
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+      } catch (err) {
+        if ((err as Error).name !== "AbortError") {
+          fallbackCopy(shareData, index)
+        }
+      }
+    } else {
+      fallbackCopy(shareData, index)
+    }
+  }
+
+  const fallbackCopy = (shareData: { title: string; text: string; url: string }, index: number) => {
+    navigator.clipboard.writeText(`${shareData.title}\n\n${shareData.text}\n\n${shareData.url}`).then(() => {
+      setCopiedIndex(index)
+      setTimeout(() => setCopiedIndex(null), 2000)
+    }).catch(() => {
+      alert("Comparte este enlace: " + SITE_URL)
+    })
+  }
 
   return (
     <>
@@ -68,7 +102,13 @@ export default function News() {
                     <div className="p-5">
                       <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full mb-2">{item.date}</span>
                       <h3 className="text-base font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted leading-relaxed">{item.excerpt}</p>
+                      <p className="text-sm text-muted leading-relaxed mb-3">{item.excerpt}</p>
+                      <button onClick={() => handleShare(item, i)}
+                        className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer bg-transparent border-none">
+                        <Share2 size={14} />
+                        Compartir
+                        {copiedIndex === i && <span className="text-green-400 font-normal ml-1">¡Copiado!</span>}
+                      </button>
                     </div>
                   </div>
                 </div>
