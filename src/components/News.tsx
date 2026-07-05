@@ -4,6 +4,12 @@ import Footer from "./Footer"
 
 const news = [
   {
+    img: "images/0101.png",
+    date: "4 Julio 2026",
+    title: "Acompañamos al jurado Vortex Creativo en un casting",
+    excerpt: "Estuvimos junto al jurado Vortex Creativo en las jornadas de casting para un nuevo proyecto. Una experiencia enriquecedora que refuerza el talento audiovisual local."
+  },
+  {
     img: "images/noche.jpg",
     date: "1 Julio 2026",
     title: "Taller de Sonido y Video de Calle: capturando la esencia de Arauca",
@@ -14,12 +20,6 @@ const news = [
     date: "15 Junio 2026",
     title: "Taller de Producción Audiovisual llegó a 50 jóvenes",
     excerpt: "Durante dos semanas, jóvenes de Tame y Arauquita aprendieron guion, dirección y edición como herramientas de expresión y transformación social."
-  },
-  {
-    img: "images/gallery2.jpg",
-    date: "4 Junio 2026",
-    title: "Acompañamos al jurado Ortex Creative en un casting",
-    excerpt: "Estuvimos junto al jurado Ortex Creative en las jornadas de casting para un nuevo proyecto. Una experiencia enriquecedora que refuerza el talento audiovisual local."
   },
   {
     img: "images/prog1.jpg",
