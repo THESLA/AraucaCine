@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "./ui/button"
 import { useNavigate } from "react-router-dom"
 import { Share2, X } from "lucide-react"
@@ -44,6 +44,32 @@ const news = [
 ]
 
 const SITE_URL = "https://THESLA.github.io/AraucaCine/#/noticias"
+const BASE_PATH = import.meta.env.BASE_URL  // '/AraucaCine/' en prod, '/' en dev
+const SITE_ORIGIN = typeof window !== "undefined" ? window.location.origin : "https://THESLA.github.io"
+const IMG_BASE = `${SITE_ORIGIN}${BASE_PATH}` // https://THESLA.github.io/AraucaCine/
+
+function getNewsImageUrl(img: string): string {
+  return `${IMG_BASE}${img}`
+}
+
+function updateOGMeta(title: string, description: string, image: string) {
+  const absImage = image.startsWith("http") ? image : `${IMG_BASE}${image}`
+  const setMeta = (property: string, content: string) => {
+    let el = document.querySelector(`meta[property="${property}"]`)
+    if (el) {
+      el.setAttribute("content", content)
+    } else {
+      el = document.createElement("meta")
+      el.setAttribute("property", property)
+      el.setAttribute("content", content)
+      document.head.appendChild(el)
+    }
+  }
+  setMeta("og:title", title)
+  setMeta("og:description", description)
+  setMeta("og:image", absImage)
+  setMeta("og:url", SITE_URL)
+}
 
 function encode(text: string) {
   return encodeURIComponent(text)
@@ -54,17 +80,67 @@ export default function News() {
   const [sharePopupIndex, setSharePopupIndex] = useState<number | null>(null)
   const [copied, setCopied] = useState(false)
 
+  // Actualiza los meta tags OG dinámicamente para que al compartir el enlace
+  // se previsualice la foto de la noticia más reciente
+  useEffect(() => {
+    if (news.length > 0) {
+      const latest = news[0]
+      updateOGMeta(
+        `AraucaCine — ${latest.title}`,
+        latest.excerpt,
+        latest.img
+      )
+    }
+    return () => {
+      // Restaura los OG tags por defecto al salir de la sección
+      updateOGMeta(
+        "AraucaCine - ONG Cultural",
+        "Transformando vidas a través del cine y la cultura en Arauca, Colombia.",
+        "images/logo.png"
+      )
+    }
+  }, [])
+
+  const getImageFile = async (img: string): Promise<File | null> => {
+    try {
+      const imgUrl = getNewsImageUrl(img)
+      const response = await fetch(imgUrl)
+      const blob = await response.blob()
+      const ext = img.split(".").pop() || "jpg"
+      return new File([blob], `noticia.${ext}`, { type: blob.type })
+    } catch {
+      return null
+    }
+  }
+
   const handleShare = async (item: typeof news[number], index: number) => {
     const fullTitle = `AraucaCine — ${item.title}`
     const shareUrl = SITE_URL
 
     // En móvil: usa la API nativa de compartir → abre WhatsApp, Instagram, Facebook, etc.
+    // Incluye la foto de la noticia como archivo adjunto para que se vea la imagen
     if (navigator.share) {
+      // Intenta compartir con la imagen incluida
+      const file = await getImageFile(item.img)
+      const baseShare: ShareData = { title: fullTitle, text: item.excerpt, url: shareUrl }
+
+      if (file && navigator.canShare && navigator.canShare({ ...baseShare, files: [file] })) {
+        try {
+          await navigator.share({ ...baseShare, files: [file] })
+          return
+        } catch (err) {
+          if ((err as Error).name !== "AbortError") {
+            setSharePopupIndex(index)
+          }
+          return
+        }
+      }
+
+      // Fallback: comparte solo texto si no se pudo adjuntar la imagen
       try {
-        await navigator.share({ title: fullTitle, text: item.excerpt, url: shareUrl })
+        await navigator.share(baseShare)
         return
       } catch (err) {
-        // Si el usuario canceló, no hacer nada. Si falló de verdad, mostramos el popup.
         if ((err as Error).name !== "AbortError") {
           setSharePopupIndex(index)
         }
@@ -137,8 +213,8 @@ export default function News() {
                               </button>
                             </div>
                             <div className="flex flex-col gap-2">
-                              {/* WhatsApp */}
-                              <a href={`https://api.whatsapp.com/send?text=${encode(`AraucaCine — ${item.title}\n\n${item.excerpt}\n\n${SITE_URL}`)}`}
+                              {/* WhatsApp — incluye la URL directa de la imagen para mejor preview */}
+                              <a href={`https://api.whatsapp.com/send?text=${encode(`AraucaCine — ${item.title}\n${getNewsImageUrl(item.img)}\n\n${item.excerpt}\n\n${SITE_URL}`)}`}
                                 target="_blank" rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-xs text-foreground/80 hover:text-foreground bg-muted/50 hover:bg-muted rounded-lg px-3 py-2 transition-colors no-underline">
                                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-green-500"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
