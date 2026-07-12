@@ -6,6 +6,12 @@ import Footer from "./Footer"
 
 const news = [
   {
+    img: "images/ola-invernal.jpg",
+    date: "12 Julio 2026",
+    title: "Ola Invernal ataca al municipio de Tame, Arauca — AraucaCine acompaña verificando los puestos afectados",
+    excerpt: "Las fuertes lluvias de los últimos días han desbordado caños y ríos en el departamento de Arauca, golpeando con fuerza al municipio de Tame y sus veredas. AraucaCine recorrió El Botalón, Los Aceites y otros puntos críticos para registrar el testimonio de las familias damnificadas. Entre barro y esperanza, los pobladores relatan cómo el agua se llevó sus enseres pero no su voluntad. Estuvimos allí, escuchando, documentando, acompañando."
+  },
+  {
     img: "images/0101.png",
     date: "4 Julio 2026",
     title: "Acompañamos al jurado Vortex Creativo en un casting",
