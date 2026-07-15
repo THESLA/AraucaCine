@@ -6,6 +6,13 @@ import Footer from "./Footer"
 
 const news = [
   {
+    img: "images/popular2.jpg",
+    date: "15 Julio 2026",
+    title: "AraucaCine participó en la Mesa de Gobernanza para el Punto de Abastecimiento Solidario (PAS) en Tame",
+    excerpt: "Hoy estuvimos presentes en la Mesa de Gobernanza convocada por Prosperidad Social en la Biblioteca Pública Coronel Fray Ignacio Mariño de Tame, Arauca. Junto a líderes comunitarios y asociaciones locales, participamos en la conformación de la Red de Formas Asociativas para el Punto de Abastecimiento Solidario (PAS). Una jornada de articulación social donde reafirmamos nuestro compromiso con el desarrollo comunitario desde la cultura y la participación ciudadana.",
+    shareText: "AraucaCine participó en la Mesa de Gobernanza del PAS en Tame, articulando con Prosperidad Social y la comunidad."
+  },
+  {
     img: "images/ola-invernal.jpg",
     date: "12 Julio 2026",
     title: "Ola Invernal ataca al municipio de Tame, Arauca — AraucaCine acompaña verificando los puestos afectados",
