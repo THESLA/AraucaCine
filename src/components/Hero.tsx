@@ -10,7 +10,7 @@ export default function Hero() {
         <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
         <h1 className="sr-only">AraucaCine</h1>
         <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed mb-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-          Asociación sin ánimo de lucro comprometida con la memoria histórica,<br className="hidden md:inline" /> la visibilización de las víctimas y la construcción de paz<br className="hidden md:inline" /> a través del cine y la cultura audiovisual
+          Asociación sin ánimo de lucro: memoria, víctimas y paz<br className="hidden md:inline" /> a través del cine y la cultura audiovisual
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Button asChild size="lg">
