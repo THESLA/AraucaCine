@@ -9,7 +9,7 @@ const images = Array.from({ length: 6 }, (_, i) => ({
     "Festival de Cine Orinoquía 2025 presentación",
     "Taller escolar en Arauquita niños aprendiendo cine",
     "Taller de Guion Creativo con jóvenes",
-    "Función de cine al aire libre en el Parque Arauca"
+    "Verificación de afectaciones por ola invernal en Tame, Arauca"
   ][i],
   caption: [
     "Taller de Producción 2025",
@@ -17,7 +17,7 @@ const images = Array.from({ length: 6 }, (_, i) => ({
     "Festival de Cine Orinoquía 2025",
     "Taller escolar en Arauquita",
     "Taller de Guion Creativo",
-    "Cine al Aire Libre - Parque Arauca"
+    "Ola Invernal en Tame - recorrido de verificación"
   ][i]
 }))
 
