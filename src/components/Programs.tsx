@@ -4,22 +4,27 @@ const programs = [
   {
     img: "images/prog1.jpg",
     title: "Cine Comunitario",
-    text: "Funciones de cine gratuitas en barrios y veredas, llevando la magia del séptimo arte a comunidades con acceso limitado a salas de cine."
+    text: "Funciones de cine gratuitas en barrios y veredas, llevando la magia del séptimo arte a comunidades con acceso limitado a salas de cine, priorizando espacios de integración cultural y convivencia."
   },
   {
     img: "images/prog2.jpg",
     title: "Talleres Audiovisuales",
-    text: "Capacitación en producción audiovisual para jóvenes, enseñando guion, dirección, fotografía y edición como herramienta de expresión."
+    text: "Capacitación en producción audiovisual para jóvenes, comunidades rurales y víctimas del conflicto, enseñando guion, dirección, fotografía y edición como herramientas de expresión y reconstrucción del tejido social."
   },
   {
     img: "images/prog3.jpg",
     title: "Festival de Cine",
-    text: "Festival anual de cine independiente y documental que da visibilidad a realizadores locales e historias de la región de la Orinoquía."
+    text: "Festival anual de cine independiente y documental que da visibilidad a realizadores locales e historias de la región de la Orinoquía, con énfasis en derechos humanos, memoria y paz."
   },
   {
     img: "images/prog4.jpg",
     title: "Formación Escolar",
-    text: "Programa educativo en escuelas públicas que utiliza el cine como herramienta pedagógica para fortalecer habilidades socioemocionales."
+    text: "Programa educativo en escuelas públicas que utiliza el cine como herramienta pedagógica para fortalecer habilidades socioemocionales, el diálogo intergeneracional y la convivencia."
+  },
+  {
+    img: "images/gallery5.jpg",
+    title: "Memoria y Paz",
+    text: "Proyectos de investigación, producción y preservación de archivos audiovisuales que rescatan la memoria histórica, visibilizan a las víctimas del conflicto armado y promueven la reconciliación y la no repetición en el departamento de Arauca."
   }
 ]
 

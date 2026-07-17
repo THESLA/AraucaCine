@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-border text-xs text-muted">
-          <p>&copy; 2026 AraucaCine. Todos los derechos reservados.</p>
+          <p>&copy; 2026 AraucaCine. <strong>Asociación sin ánimo de lucro</strong> — Domicilio: Tame, Arauca, Colombia.</p>
           <p>Hecho con <span className="text-accent">♥</span> en Tame, Arauca</p>
         </div>
       </div>
