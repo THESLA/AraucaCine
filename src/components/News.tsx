@@ -9,7 +9,7 @@ const news = [
     img: "images/cabuya.jpg",
     date: "19 Julio 2026",
     title: "Vereda La Cabuya resiste tras la ola invernal — puente destruido y comunidades aisladas entre Casanare y Arauca",
-    excerpt: "En la vereda La Cabuya, en la frontera entre Casanare y Arauca, la ola invernal destruyó el puente Matamoros, dejando aisladas a las comunidades. Las lluvias se llevaron vías, potreros, cercas y torres de energía. Los pobladores, entre ellos el líder Marcos Rodríguez, cruzan el río La Playonera (Agua Blanca) en una polea provisional, arriesgando su vida a diario. Necesitan cuerda y cemento para reconstruir la canasta y restablecer el paso. La comunidad clama ayuda al municipio de Tame. AraucaCine estuvo allí, registrando la emergencia y amplificando su voz.",
+    excerpt: "AraucaCine estuvo en la vereda La Cabuya, en la frontera entre Casanare y Arauca, grabando los hechos que vive esta región tras la ola invernal. El puente Matamoros quedó destruido, las vías arrasadas, los potreros perdidos y las torres de energía caídas. Los pobladores, entre ellos el líder Marcos Rodríguez, cruzan el río La Playonera (Agua Blanca) en una polea provisional, arriesgando su vida a diario. Necesitan cuerda y cemento para reconstruir la canasta. La comunidad clama ayuda al municipio de Tame. Estuvimos allí, registrando cada testimonio para amplificar la voz de esta comunidad.",
     shareText: "Ola invernal destruyó el puente Matamoros en La Cabuya. Comunidades aisladas cruzan el río en polea provisional. AraucaCine registró la emergencia."
   },
   {
