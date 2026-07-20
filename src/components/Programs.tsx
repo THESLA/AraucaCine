@@ -40,7 +40,7 @@ export default function Programs() {
                 style={{ background: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('${p.img}') center/cover` }}
               />
               <div>
-                <h3 className="text-lg font-semibold mb-1.5 group-hover:text-accent transition-colors">{p.title}</h3>
+                <h3 className="text-lg font-semibold mb-1.5 text-accent group-hover:text-muted transition-colors">{p.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{p.text}</p>
               </div>
             </div>
