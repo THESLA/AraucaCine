@@ -2,7 +2,7 @@
   "name": "AraucaCine - ONG Cultural",
   "short_name": "AraucaCine",
   "description": "Transformando vidas a través del cine y la cultura en Arauca, Colombia.",
-  "start_url": "/",
+  "start_url": "/AraucaCine/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0a0806",
