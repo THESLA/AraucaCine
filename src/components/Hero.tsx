@@ -2,7 +2,10 @@ import { Button } from "./ui/button"
 
 export default function Hero() {
   return (
-    <section id="inicio" className="hero-bg relative min-h-screen flex items-center justify-center">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center"
+      style={{
+        background: "linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('images/hero.jpg') center/cover no-repeat"
+      }}>
       <div className="text-center px-4 z-10 max-w-3xl">
         <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
         <h1 className="sr-only">AraucaCine</h1>

@@ -57,11 +57,11 @@ body {
   transform: translateX(-50%) scaleX(1);
 }
 
-.hero-bg {
-  background: linear-gradient(rgba(0,126,255,0.92), rgba(0,126,255,0.92)), url('images/hero.jpg') center/cover no-repeat;
+:root {
+  --hero-overlay: rgba(0, 126, 255, 0.95);
 }
-.light .hero-bg {
-  background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('images/hero.jpg') center/cover no-repeat;
+.light {
+  --hero-overlay: rgba(255, 255, 255, 0.95);
 }
 
 @keyframes rippleAnim {
