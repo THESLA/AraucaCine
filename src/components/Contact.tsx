@@ -46,7 +46,7 @@ export default function Contact() {
               </p>
               <p className="flex items-center gap-3 text-sm">
                 <MapPinIcon />
-                <span>Cra 30a 12 - 44 Vergel, Tame - Arauca</span>
+                <span>Cra 30 #12-44 Barrio Vergel, Tame - Arauca</span>
               </p>
             </div>
             <div className="flex gap-4 mb-8">
@@ -61,11 +61,11 @@ export default function Contact() {
               </a>
             </div>
             <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-71.747%2C6.445%2C-71.727%2C6.465&amp;layer=mapnik&amp;marker=6.455%2C-71.737"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-71.7501%2C6.4474%2C-71.7401%2C6.4574&amp;layer=mapnik&amp;marker=6.4524%2C-71.7451"
               width="100%" height="220" style={{ border: "1px solid var(--color-border)", borderRadius: 8, boxShadow: "0 4px 12px rgba(0,0,0,0.15)" }}
-              loading="lazy" title="Cra 30a 12-44 Vergel, Tame - Arauca" />
+              loading="lazy" title="Cra 30 #12-44 Barrio Vergel, Tame - Arauca" />
             <p className="text-xs text-muted mt-1.5">
-              <a href="https://www.openstreetmap.org/?mlat=6.455&amp;mlon=-71.737#map=17/6.455/-71.737" target="_blank" rel="noopener" className="text-accent hover:text-accent-hover">Ver mapa más grande</a>
+              <a href="https://www.openstreetmap.org/?mlat=6.4524&amp;mlon=-71.7451#map=17/6.4524/-71.7451" target="_blank" rel="noopener" className="text-accent hover:text-accent-hover">Ver mapa más grande</a>
             </p>
           </div>
           <form onSubmit={handleSubmit} action="https://formspree.io/f/mojbojgj" method="POST" className="flex flex-col gap-5">
