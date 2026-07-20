@@ -26,14 +26,14 @@ export default function Footer() {
 
         <div className="pt-8 pb-6 border-t border-border">
           <p className="text-center text-[10px] font-semibold text-muted tracking-[0.2em] uppercase mb-6">Tecnologías que impulsan AraucaCine</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
             {techs.map(t => (
               <a key={t.name} href={t.url} target="_blank" rel="noopener"
-                className="tech-card group flex flex-col items-center gap-2 px-3 py-4 rounded-xl bg-card/40 border border-border/40 hover:bg-card hover:border-accent/30 hover:shadow-md hover:shadow-accent/5 transition-all duration-300 no-underline"
+                className="tech-card group flex flex-col items-center gap-1 px-2.5 py-3 rounded-xl bg-card/40 border border-border/40 hover:bg-card hover:border-accent/30 hover:shadow-md hover:shadow-accent/5 transition-all duration-300 no-underline"
                 style={{ '--brand': t.color } as React.CSSProperties}>
                 <TechLogo name={t.logo} />
-                <span className="text-xs font-semibold text-muted group-hover:text-[var(--brand)] transition-colors">{t.name}</span>
-                <span className="text-[9px] text-muted/50 group-hover:text-muted/70 transition-colors -mt-1">{t.desc}</span>
+                <span className="text-[10px] font-semibold text-muted group-hover:text-[var(--brand)] transition-colors">{t.name}</span>
+                <span className="text-[8px] text-muted/50 group-hover:text-muted/70 transition-colors -mt-0.5">{t.desc}</span>
               </a>
             ))}
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
   )
 }
 
-const svgCls = "w-7 h-7 text-muted group-hover:text-[var(--brand)] transition-colors"
+const svgCls = "w-6 h-6 text-muted group-hover:text-[var(--brand)] transition-colors"
 
 function TechLogo({ name }: { name: string }) {
   switch (name) {
