@@ -3,6 +3,7 @@ import { Button } from "./ui/button"
 import { useNavigate } from "react-router-dom"
 import { Share2, X } from "lucide-react"
 import Footer from "./Footer"
+import { useReaction } from "@/hooks/useReaction"
 
 const news = [
   {
@@ -89,6 +90,42 @@ function updateOGMeta(title: string, description: string, image: string) {
   setMeta("og:description", description)
   setMeta("og:image", absImage)
   setMeta("og:url", SITE_URL)
+}
+
+const reactionsConfig = [
+  { id: "apoyo", emoji: "👍", label: "Apoyo" },
+  { id: "solidaridad", emoji: "❤️", label: "Solidaridad" },
+  { id: "impactante", emoji: "🔥", label: "Impactante" },
+]
+
+function Reactions({ newsIndex }: { newsIndex: number }) {
+  const apoyo = useReaction(newsIndex, "apoyo")
+  const solidaridad = useReaction(newsIndex, "solidaridad")
+  const impactante = useReaction(newsIndex, "impactante")
+  const all = [apoyo, solidaridad, impactante]
+
+  return (
+    <div className="flex items-center gap-3 mt-3 mb-3">
+      {reactionsConfig.map((cfg, i) => {
+        const r = all[i]
+        return (
+          <button
+            key={cfg.id}
+            onClick={r.toggle}
+            disabled={r.reacted}
+            className={`inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border transition-all cursor-pointer ${
+              r.reacted
+                ? "bg-accent/15 border-accent/40 text-accent font-semibold"
+                : "bg-transparent border-border text-muted hover:border-accent/30 hover:text-foreground"
+            }`}
+          >
+            <span className="text-sm leading-none">{cfg.emoji}</span>
+            <span>{r.count}</span>
+          </button>
+        )
+      })}
+    </div>
+  )
 }
 
 function encode(text: string) {
@@ -210,14 +247,20 @@ export default function News() {
                 <div className={`flex-1 pl-14 md:pl-0 ${left ? "md:pr-14" : "md:pl-14"}`}>
                   <div className={`relative bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 ${left ? "md:text-right" : ""}`}>
                     <div className={`hidden md:block absolute top-6 w-4 h-0.5 bg-accent/40 ${left ? "right-0 translate-x-full" : "left-0 -translate-x-full"}`} />
-                    <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
-                      className="w-full h-48 object-cover" />
-                    <div className="p-5">
-                      <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full mb-2">{item.date}</span>
-                      <h3 className="text-base font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted leading-relaxed mb-3">{item.excerpt}</p>
+                    <div className="relative">
+                      <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
+                        className="w-full aspect-video object-cover" />
+                      <div className="absolute top-3 left-3">
+                        <span className="inline-block text-[10px] font-bold text-accent bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full">{item.date}</span>
+                      </div>
+                    </div>
+                    <div className="p-4 md:p-5">
+                      <h3 className="text-[15px] md:text-base font-semibold leading-snug text-foreground [text-shadow:0_1px_4px_rgba(0,0,0,0.3)] line-clamp-3">{item.title}</h3>
+                      <p className="text-xs md:text-sm text-muted leading-relaxed mt-2 mb-3">{item.excerpt}</p>
 
-                      <div className="relative">
+                      <Reactions newsIndex={i} />
+
+                      <div className="relative mt-2 pt-3 border-t border-border/40">
                         <button onClick={() => handleShare(item, i)}
                           className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer bg-transparent border-none">
                           <Share2 size={14} />
