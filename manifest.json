@@ -1,0 +1,17 @@
+{
+  "name": "AraucaCine - ONG Cultural",
+  "short_name": "AraucaCine",
+  "description": "Transformando vidas a través del cine y la cultura en Arauca, Colombia.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0806",
+  "theme_color": "#0a0806",
+  "categories": ["culture", "education", "nonprofit"],
+  "lang": "es-CO",
+  "icons": [
+    { "src": "images/logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
