@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Dialog, DialogContent } from "./ui/dialog"
 
 const images = Array.from({ length: 6 }, (_, i) => ({
@@ -29,13 +29,24 @@ export default function Gallery() {
   const prev = () => setIdx(i => i !== null ? (i - 1 + images.length) % images.length : null)
   const next = () => setIdx(i => i !== null ? (i + 1) % images.length : null)
 
+  useEffect(() => {
+    if (idx === null) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prev()
+      else if (e.key === 'ArrowRight') next()
+      else if (e.key === 'Escape') close()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [idx])
+
   return (
     <section id="galeria" className="py-24 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Galería</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {images.map((img, i) => (
-            <div key={i} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md shadow-black/15" onClick={() => open(i)}>
+            <div key={i} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md shadow-black/15" onClick={() => open(i)} tabIndex={0} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') open(i) }}>
               <img src={img.src} alt={img.alt} width={600} height={400} loading="lazy"
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
