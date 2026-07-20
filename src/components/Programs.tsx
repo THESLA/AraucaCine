@@ -33,7 +33,7 @@ export default function Programs() {
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">Nuestros Programas</h2>
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto">
           {programs.map(p => (
-            <div key={p.title} className="group flex gap-4 items-start p-4 rounded-xl hover:bg-card/70 hover:shadow-md hover:shadow-black/10 transition-all duration-300">
+            <div key={p.title} className="group flex gap-3 items-start p-2.5 rounded-xl bg-card hover:bg-card/70 hover:shadow-md hover:shadow-black/10 transition-all duration-300">
               <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-cover bg-center shadow-md shadow-black/15"
                 style={{ background: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('${p.img}') center/cover` }}
               />
