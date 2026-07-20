@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && git checkout --orphan deploy-temp && for /f %f in ('dir /b') do @if not \"%f\"==\"dist\" if not \"%f\"==\".git\" @(rd /s /q %f 2>nul & del /f /q %f 2>nul) && xcopy /e /y /q dist\* . >nul && rd /s /q dist && echo.>.nojekyll && git add -A && git commit -m \"deploy\" && git push origin deploy-temp:gh-pages --force && git checkout master && git branch -D deploy-temp"
+    "deploy": "deploy.bat"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
