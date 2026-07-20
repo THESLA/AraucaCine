@@ -61,6 +61,10 @@ body {
   to { transform: scale(4); opacity: 0; }
 }
 
+p {
+  text-align: justify;
+}
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-background);
