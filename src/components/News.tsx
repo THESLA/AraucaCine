@@ -251,7 +251,7 @@ export default function News() {
               </div>
               <div className="p-4 md:p-5">
                 <h3 className="text-[15px] md:text-base font-semibold leading-snug text-foreground [text-shadow:0_1px_4px_rgba(0,0,0,0.3)] line-clamp-3">{item.title}</h3>
-                <p className="text-xs md:text-sm text-muted leading-relaxed mt-2 mb-3">{item.excerpt}</p>
+                <p className="text-xs md:text-sm text-muted leading-relaxed mt-2 mb-3 text-justify">{item.excerpt}</p>
 
                 <Reactions newsIndex={i} />
 

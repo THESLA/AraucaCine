@@ -48,7 +48,7 @@ export default function Programs() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">{p.title}</h3>
-                <p className="text-sm text-muted leading-relaxed line-clamp-3 transition-all duration-300 group-hover:line-clamp-none">{p.text}</p>
+                <p className="text-sm text-muted leading-relaxed line-clamp-3 transition-all duration-300 group-hover:line-clamp-none text-justify">{p.text}</p>
               </div>
             </div>
           ))}
