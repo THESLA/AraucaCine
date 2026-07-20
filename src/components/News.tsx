@@ -250,7 +250,10 @@ export default function News() {
                     <div className="relative">
                       <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
                         className="w-full aspect-video object-cover" />
-                      <div className="absolute top-3 left-3">
+                      <div className="absolute top-3 left-3 flex items-center gap-2">
+                        {i === 0 && (
+                          <span className="inline-block text-[10px] font-bold text-amber-300 bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full animate-pulse">ÚLTIMA NOTICIA</span>
+                        )}
                         <span className="inline-block text-[10px] font-bold text-accent bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full">{item.date}</span>
                       </div>
                     </div>
@@ -333,21 +336,8 @@ export default function News() {
           })}
         </div>
 
-        <div className="relative mt-16 mb-20 bg-card/50 border border-border rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
-          <div className="relative p-8 md:p-12 text-center">
-            <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4 tracking-widest uppercase">Cronología</span>
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">Nuestra Trayectoria</h3>
-            <p className="text-muted text-sm max-w-xl mx-auto mb-8">
-              Desde nuestros inicios, cada año ha sido una oportunidad para llevar el cine y la cultura a más comunidades de Arauca.
-            </p>
-            <div className="flex items-center justify-center">
-              <div className="text-center">
-                <span className="block text-4xl md:text-5xl font-bold text-accent">2016</span>
-                <span className="text-[10px] text-muted tracking-widest uppercase">Inicio</span>
-              </div>
-            </div>
-          </div>
+        <div className="mt-16 mb-20 text-center">
+          <span className="block text-6xl md:text-7xl font-bold text-foreground/20 select-none">2026</span>
         </div>
       </div>
     </section>
