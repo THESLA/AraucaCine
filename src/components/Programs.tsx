@@ -30,16 +30,25 @@ export default function Programs() {
   return (
     <section id="programas" className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">Nuestros Programas</h2>
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto">
-          {programs.map(p => (
-            <div key={p.title} className="group flex gap-3 items-start p-2.5 rounded-xl bg-card hover:bg-card/70 hover:shadow-md hover:shadow-black/10 transition-all duration-300">
-              <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-cover bg-center shadow-md shadow-black/15"
-                style={{ background: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('${p.img}') center/cover` }}
-              />
-              <div>
-                <h3 className="text-base font-semibold mb-1 text-accent group-hover:text-muted transition-colors">{p.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{p.text}</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center tracking-tight">Nuestros Programas</h2>
+        <p className="text-muted text-center mb-16 max-w-2xl mx-auto">
+          Transformamos vidas a través del cine y la cultura en cada rincón de Arauca
+        </p>
+        <div className="grid md:grid-cols-3 gap-5">
+          {programs.map((p, i) => (
+            <div key={p.title}
+              className={`group relative overflow-hidden rounded-2xl border border-border/40 cursor-pointer ${
+                i === 0 ? "md:col-span-2 md:row-span-1" : ""
+              }`}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: `url('${p.img}')` }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+              <div className="relative z-10 flex flex-col justify-end h-full min-h-[280px] p-6">
+                <span className="inline-block text-[10px] font-bold text-accent bg-accent/10 px-2 py-0.5 rounded-full mb-3 w-fit">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">{p.title}</h3>
+                <p className="text-sm text-muted leading-relaxed line-clamp-3 transition-all duration-300 group-hover:line-clamp-none">{p.text}</p>
               </div>
             </div>
           ))}
