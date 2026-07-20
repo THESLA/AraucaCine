@@ -106,7 +106,7 @@ body {
   filter: brightness(0) invert(1);
 }
 .light .logo-nav {
-  filter: none;
+  filter: brightness(0) saturate(100%) invert(33%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(95%);
 }
 
 .logo-hero {
@@ -115,7 +115,7 @@ body {
   height: 24rem;
 }
 .light .logo-hero {
-  filter: none;
+  filter: brightness(0) saturate(100%) invert(33%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(95%);
   width: 15rem;
   height: 15rem;
 }
