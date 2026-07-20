@@ -20,6 +20,10 @@ const items = [
 ]
 
 export default function Help() {
+  const scrollToContact = () => {
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section id="ayudar" className="py-24 px-4">
       <div className="max-w-6xl mx-auto text-center">
@@ -33,7 +37,7 @@ export default function Help() {
               <div className="text-4xl mb-4" aria-hidden="true">{i.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{i.title}</h3>
               <p className="text-muted text-sm mb-6">{i.text}</p>
-              <Button variant="default">{i.title === "Donación" ? "Donar Ahora" : i.title === "Voluntariado" ? "Ser Voluntario" : "Ser Aliado"}</Button>
+              <Button variant="default" onClick={scrollToContact}>{i.title === "Donación" ? "Donar Ahora" : i.title === "Voluntariado" ? "Ser Voluntario" : "Ser Aliado"}</Button>
             </Card>
           ))}
         </div>

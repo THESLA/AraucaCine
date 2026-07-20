@@ -1,19 +1,6 @@
-const CACHE = 'arauacine-v1';
-const ASSETS = [
-  '/',
-  'index.html',
-  'styles.css',
-  'script.js',
-  'manifest.json',
-  'images/logo.png',
-  'images/hero.jpg'
-];
+const CACHE = 'arauacine-v2';
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting())
-  );
-});
+self.addEventListener('install', () => self.skipWaiting());
 
 self.addEventListener('activate', e => {
   e.waitUntil(
@@ -26,7 +13,7 @@ self.addEventListener('fetch', e => {
   if (url.origin !== location.origin) return;
   if (e.request.mode === 'navigate') {
     e.respondWith(
-      fetch(e.request).catch(() => caches.match('index.html'))
+      fetch(e.request).catch(() => caches.match('/AraucaCine/index.html'))
     );
     return;
   }
