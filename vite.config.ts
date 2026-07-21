@@ -4,11 +4,18 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import { execSync } from 'child_process'
+import compress from 'vite-plugin-compression'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const commitHash = execSync('git rev-parse --short HEAD').toString().trim()
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    compress({ algorithm: 'gzip', ext: '.gz', deleteOriginFile: false }),
+    visualizer({ filename: 'dist/stats.html', open: false, gzipSize: true, brotliSize: true }),
+  ],
   base: '/AraucaCine/',
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') }
@@ -19,6 +26,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          router: ['react-router-dom'],
+          icons: ['lucide-react'],
+        },
+      },
+    },
   },
   test: {
     globals: true,

@@ -240,8 +240,11 @@ export default function News() {
           {news.map((item, i) => (
             <div key={item.title} className="bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
               <div className="relative">
-                <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
-                  className="w-full aspect-video object-cover" />
+                <picture>
+                  <source srcSet={item.img.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+                  <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
+                    className="w-full aspect-video object-cover" />
+                </picture>
                 <div className="absolute top-3 left-3 flex items-center gap-2">
                   {i === 0 && (
                     <span className="inline-block text-[10px] font-bold text-amber-300 bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full animate-pulse">ÚLTIMA NOTICIA</span>
