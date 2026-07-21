@@ -47,11 +47,8 @@ export default function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {images.map((img, i) => (
             <div key={i} className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md shadow-black/15" onClick={() => open(i)} tabIndex={0} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') open(i) }}>
-              <picture>
-                <source srcSet={img.src.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
-                <img src={img.src} alt={img.alt} width={600} height={400} loading="lazy"
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
-              </picture>
+              <img src={img.src} alt={img.alt} width={600} height={400} loading="lazy"
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
                 <span className="text-white text-xs p-2 opacity-0 group-hover:opacity-100 transition-opacity">{img.caption}</span>
               </div>
@@ -65,10 +62,7 @@ export default function Gallery() {
           {idx !== null && (
             <div className="relative flex items-center justify-center">
               <button onClick={prev} className="absolute left-2 z-10 text-white/80 hover:text-white text-3xl cursor-pointer" aria-label="Anterior">‹</button>
-              <picture>
-                <source srcSet={images[idx].src.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
-                <img src={images[idx].src} alt={images[idx].alt} className="max-h-[80vh] w-auto object-contain rounded" />
-              </picture>
+              <img src={images[idx].src} alt={images[idx].alt} className="max-h-[80vh] w-auto object-contain rounded" />
               <button onClick={next} className="absolute right-2 z-10 text-white/80 hover:text-white text-3xl cursor-pointer" aria-label="Siguiente">›</button>
             </div>
           )}

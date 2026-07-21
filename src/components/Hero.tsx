@@ -4,13 +4,10 @@ export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center"
       style={{
-        background: "linear-gradient(var(--hero-overlay), var(--hero-overlay)), image-set(url('images/hero.webp') type('image/webp'), url('images/hero.jpg') type('image/jpeg')) center/cover no-repeat"
+        background: "linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('images/hero.jpg') center/cover no-repeat"
       }}>
       <div className="text-center px-4 z-10 max-w-3xl">
-        <picture>
-          <source srcSet="images/logo-hero.webp" type="image/webp" />
-          <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
-        </picture>
+        <img src="images/logo-hero.png" alt="AraucaCine" className="logo-hero mx-auto mb-8 opacity-90" />
         <h1 className="sr-only">AraucaCine</h1>
         <p className="text-xl md:text-2xl text-center text-foreground/80 leading-relaxed mb-10" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
           Asociación sin ánimo de lucro: memoria, víctimas y paz<br className="hidden md:inline" /> a través del cine y la cultura audiovisual

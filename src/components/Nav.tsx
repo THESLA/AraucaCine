@@ -49,10 +49,7 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border shadow-lg shadow-black/10">
       <nav className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <button onClick={handleLogo} className="flex items-center gap-2 cursor-pointer text-left bg-transparent border-none">
-          <picture>
-            <source srcSet="images/logo.webp" type="image/webp" />
-            <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
-          </picture>
+          <img src="images/logo.png" alt="AraucaCine" className="logo-nav h-10 w-10" />
           <div>
             <span className="text-foreground text-[1.45rem] font-bold" style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}>AraucaCine</span>
             <span className="block text-[10px] text-muted leading-none -mt-0.5">{__COMMIT_HASH__}</span>
