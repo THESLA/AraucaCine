@@ -8,7 +8,6 @@ import { useReaction } from "@/hooks/useReaction"
 const news = [
   {
     img: "images/convite.jpg",
-    video: "videos/convite.mp4",
     date: "25 Julio 2026",
     title: "AraucaCine acompañó un convite comunitario en Tame — la unión hace la fuerza",
     excerpt: "Ayer estuvimos grabando un convite en Tame, Arauca, donde la comunidad se reunió para trabajar en equipo en una jornada de limpieza y adecuación de espacios comunes. El convite, tradición ancestral de trabajo colectivo, demuestra que la unión y la solidaridad siguen vivas en nuestra región. AraucaCine registró cada momento para visibilizar estas iniciativas que fortalecen el tejido social.",
@@ -248,13 +247,8 @@ export default function News() {
           {news.map((item, i) => (
             <div key={item.title} className="bg-card border border-border rounded-xl overflow-hidden hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
               <div className="relative">
-                {item.video ? (
-                  <video src={item.video} controls preload="metadata" poster={item.img}
-                    className="w-full aspect-video object-cover" />
-                ) : (
-                  <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
-                    className="w-full aspect-video object-cover" />
-                )}
+                <img src={item.img} alt={item.title} width={600} height={400} loading="lazy"
+                  className="w-full aspect-video object-cover" />
                 <div className="absolute top-3 left-3 flex items-center gap-2">
                   {i === 0 && (
                     <span className="inline-block text-[10px] font-bold text-amber-300 bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full animate-pulse">ÚLTIMA NOTICIA</span>
