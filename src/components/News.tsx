@@ -7,6 +7,7 @@ import { useReaction } from "@/hooks/useReaction"
 
 const news = [
   {
+    id: "convite",
     img: "images/convite.jpg",
     date: "25 Julio 2026",
     title: "AraucaCine acompañó un convite comunitario en Tame — la unión hace la fuerza",
@@ -14,6 +15,7 @@ const news = [
     shareText: "AraucaCine acompañó un convite comunitario en Tame — la unión hace la fuerza. Tradición de trabajo colectivo."
   },
   {
+    id: "cabuya",
     img: "images/cabuya.jpg",
     date: "19 Julio 2026",
     title: "Vereda La Cabuya resiste tras la ola invernal — puente destruido y comunidades aisladas entre Casanare y Arauca",
@@ -21,6 +23,7 @@ const news = [
     shareText: "Ola invernal destruyó el puente Matamoros en La Cabuya. Comunidades aisladas cruzan el río en polea provisional. AraucaCine registró la emergencia."
   },
   {
+    id: "pas",
     img: "images/popular2.jpg",
     date: "15 Julio 2026",
     title: "AraucaCine participó en la Mesa de Gobernanza para el Punto de Abastecimiento Solidario (PAS) en Tame",
@@ -28,6 +31,7 @@ const news = [
     shareText: "AraucaCine participó en la Mesa de Gobernanza del PAS en Tame, articulando con Prosperidad Social y la comunidad."
   },
   {
+    id: "ola-invernal",
     img: "images/ola-invernal.jpg",
     date: "12 Julio 2026",
     title: "Ola Invernal ataca al municipio de Tame, Arauca — AraucaCine acompaña verificando los puestos afectados",
@@ -35,6 +39,7 @@ const news = [
     shareText: "Ola invernal golpeó a Tame. AraucaCine acompañó a las familias damnificadas en El Botalón y Los Aceites."
   },
   {
+    id: "casting",
     img: "images/0101.png",
     date: "4 Julio 2026",
     title: "Acompañamos al jurado Vortex Creativo en un casting",
@@ -42,6 +47,7 @@ const news = [
     shareText: "Acompañamos al jurado Vortex Creativo en un casting lleno de talento audiovisual local."
   },
   {
+    id: "taller-sonido",
     img: "images/noche.jpg",
     date: "1 Julio 2026",
     title: "Taller de Sonido y Video de Calle: capturando la esencia de Arauca",
@@ -49,6 +55,7 @@ const news = [
     shareText: "Salimos a las calles de Arauca a capturar sonidos e imágenes para nuestro taller audiovisual."
   },
   {
+    id: "taller-50-jovenes",
     img: "images/gallery3.jpg",
     date: "15 Junio 2026",
     title: "Taller de Producción Audiovisual llegó a 50 jóvenes",
@@ -56,6 +63,7 @@ const news = [
     shareText: "50 jóvenes de Tame y Arauquita aprendieron guion, dirección y edición audiovisual."
   },
   {
+    id: "cine-comunitario",
     img: "images/prog1.jpg",
     date: "28 Mayo 2026",
     title: "Cine Comunitario en Caño Limón: una noche mágica",
@@ -63,6 +71,7 @@ const news = [
     shareText: "Más de 200 personas disfrutaron de cine al aire libre en la vereda Caño Limón."
   },
   {
+    id: "festival-cine",
     img: "images/gallery5.jpg",
     date: "10 Mayo 2026",
     title: "Convocatoria abierta: Festival de Cine Orinoquía 2026",
@@ -105,10 +114,10 @@ const reactionsConfig = [
   { id: "impactante", emoji: "🔥", label: "Impactante" },
 ]
 
-function Reactions({ newsIndex }: { newsIndex: number }) {
-  const apoyo = useReaction(newsIndex, "apoyo")
-  const solidaridad = useReaction(newsIndex, "solidaridad")
-  const impactante = useReaction(newsIndex, "impactante")
+function Reactions({ newsId }: { newsId: string }) {
+  const apoyo = useReaction(newsId, "apoyo")
+  const solidaridad = useReaction(newsId, "solidaridad")
+  const impactante = useReaction(newsId, "impactante")
   const all = [apoyo, solidaridad, impactante]
 
   return (
@@ -260,7 +269,7 @@ export default function News() {
                 <h3 className="text-[15px] md:text-base font-semibold leading-snug text-foreground [text-shadow:0_1px_4px_rgba(0,0,0,0.3)] line-clamp-3">{item.title}</h3>
                 <p className="text-xs md:text-sm text-muted leading-relaxed mt-2 mb-3 text-justify">{item.excerpt}</p>
 
-                <Reactions newsIndex={i} />
+                <Reactions newsId={item.id} />
 
                 <div className="relative mt-2 pt-3 border-t border-border/40">
                   <button onClick={() => handleShare(item, i)}
