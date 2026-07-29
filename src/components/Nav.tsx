@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
-import { useNavigate, useLocation, Link } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import ThemeToggle from "./ThemeToggle"
 import { MagneticButton } from "./ui/magnetic-button"
 
@@ -10,7 +10,7 @@ const sections = [
   { id: "programas", label: "Programas" },
   { id: "galeria", label: "Galería" },
   { id: "videos", label: "Videos" },
-  { id: "noticias", label: "Noticias", isRoute: true },
+  { id: "noticias", label: "Noticias" },
   { id: "ayudar", label: "Cómo Ayudar" },
   { id: "contacto", label: "Contacto" },
 ]
@@ -59,14 +59,13 @@ export default function Nav() {
 
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {sections.map(s =>
-            s.isRoute ? (
+            s.id === "noticias" ? (
               <MagneticButton key={s.id}>
-                <Link to="/noticias"
-                  className="text-sm shake-link transition-all duration-300 hover:scale-110 block"
-                  style={{ color: "#FCC600" }}
-                  onClick={() => setOpen(false)}>
+                <button onClick={() => handleSectionClick(s.id)}
+                  className="text-sm shake-link transition-all duration-300 hover:scale-110 cursor-pointer bg-transparent border-none"
+                  style={{ color: "#FCC600" }}>
                   {s.label}<span className="alert-dot" />
-                </Link>
+                </button>
               </MagneticButton>
             ) : (
               <button key={s.id} onClick={() => handleSectionClick(s.id)}
@@ -89,14 +88,13 @@ export default function Nav() {
       {open && (
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
           {sections.map(s =>
-            s.isRoute ? (
+            s.id === "noticias" ? (
               <MagneticButton key={s.id}>
-                <Link to="/noticias"
-                  className="text-sm shake-link transition-all duration-300 hover:scale-110 block"
-                  style={{ color: "#FCC600" }}
-                  onClick={() => setOpen(false)}>
+                <button onClick={() => handleSectionClick(s.id)}
+                  className="text-sm shake-link transition-all duration-300 hover:scale-110 cursor-pointer bg-transparent border-none"
+                  style={{ color: "#FCC600" }}>
                   {s.label}<span className="alert-dot" />
-                </Link>
+                </button>
               </MagneticButton>
             ) : (
               <button key={s.id} onClick={() => handleSectionClick(s.id)}

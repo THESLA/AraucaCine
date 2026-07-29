@@ -6,11 +6,10 @@ import About from "./components/About"
 import Programs from "./components/Programs"
 import Gallery from "./components/Gallery"
 import Videos from "./components/Videos"
+import News from "./components/News"
 import Help from "./components/Help"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
-
-const News = lazy(() => import("./components/News"))
 
 function MainPage() {
   return (
@@ -20,6 +19,7 @@ function MainPage() {
       <Programs />
       <Gallery />
       <Videos />
+      <News />
       <Help />
       <Contact />
       <Footer />
@@ -39,7 +39,7 @@ export default function App() {
               <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin" />
             </div>
           }>
-            <News />
+            <News standalone />
           </Suspense>
         } />
       </Routes>

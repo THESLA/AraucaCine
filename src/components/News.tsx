@@ -149,7 +149,7 @@ function encode(text: string) {
   return encodeURIComponent(text)
 }
 
-export default function News() {
+export default function News({ standalone }: { standalone?: boolean }) {
   const navigate = useNavigate()
   const [activeIndex, setActiveIndex] = useState(0)
   const [sharePopupIndex, setSharePopupIndex] = useState<number | null>(null)
@@ -260,16 +260,18 @@ export default function News() {
 
   return (
     <>
-    <section id="noticias" className="min-h-screen pt-24 px-4">
+    <section id="noticias" className={`${standalone ? "min-h-screen pt-24" : "pt-16 pb-12"} px-4`}>
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold">Noticias</h2>
             <p className="text-muted mt-2">Línea de tiempo de nuestras actividades</p>
           </div>
-          <Button variant="secondary" onClick={() => { navigate("/"); window.scrollTo({ top: 0 }) }}>
-            ← Volver
-          </Button>
+          {standalone && (
+            <Button variant="secondary" onClick={() => { navigate("/"); window.scrollTo({ top: 0 }) }}>
+              ← Volver
+            </Button>
+          )}
         </div>
 
         {/* Index counter */}
@@ -406,7 +408,7 @@ export default function News() {
         </div>
       </div>
     </section>
-    <Footer />
+    {standalone && <Footer />}
     </>
   )
 }
