@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { Share2, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Footer from "./Footer"
 import { useReaction } from "@/hooks/useReaction"
+import { Separator } from "./ui/separator"
 
 const news = [
   {
@@ -325,27 +326,30 @@ export default function News({ standalone }: { standalone?: boolean }) {
             <div className="relative">
               <img src={news[activeIndex].img} alt={news[activeIndex].title} width={600} height={400}
                 className="w-full aspect-video object-cover" />
-              <div className="absolute top-3 left-3 flex items-center gap-2">
-                {activeIndex === 0 && (
-                  <span className="inline-block text-[10px] font-bold text-amber-300 bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full animate-pulse">ÚLTIMA NOTICIA</span>
-                )}
-                <span className="inline-block text-[10px] font-bold text-accent bg-background/80 backdrop-blur-sm px-2 py-0.5 rounded-full">{news[activeIndex].date}</span>
-              </div>
             </div>
             <div className="p-4 md:p-5" onClick={e => e.stopPropagation()}>
-              <h3 className="text-[15px] md:text-base font-semibold leading-snug text-foreground [text-shadow:0_1px_4px_rgba(0,0,0,0.3)] line-clamp-3">{news[activeIndex].title}</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-xs font-medium text-accent bg-accent/10 px-2.5 py-1 rounded-md">{news[activeIndex].date}</span>
+                {activeIndex === 0 && (
+                  <span className="text-[10px] font-bold text-amber-300 bg-amber-500/15 px-2 py-0.5 rounded-full animate-pulse">ÚLTIMA NOTICIA</span>
+                )}
+              </div>
+              <h3 className="text-[15px] md:text-base font-semibold leading-snug text-foreground line-clamp-3">{news[activeIndex].title}</h3>
               <p className="text-xs md:text-sm text-muted leading-relaxed mt-2 mb-3 text-justify">{news[activeIndex].excerpt}</p>
 
-              <Reactions newsId={news[activeIndex].id} />
+              <Separator className="mb-3" />
 
-              <div className="relative mt-2 pt-3 border-t border-border/40">
-                <button onClick={() => handleShare(news[activeIndex], activeIndex)}
-                  className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer bg-transparent border-none">
-                  <Share2 size={14} />
-                  Compartir
-                </button>
+              <div className="flex items-center gap-3">
+                <Reactions newsId={news[activeIndex].id} />
+                <Separator orientation="vertical" className="h-6" />
+                <div className="relative">
+                  <button onClick={() => handleShare(news[activeIndex], activeIndex)}
+                    className="inline-flex items-center gap-1.5 text-[11px] font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer bg-transparent border-none whitespace-nowrap">
+                    <Share2 size={14} />
+                    Compartir
+                  </button>
 
-                {sharePopupIndex === activeIndex && (
+                  {sharePopupIndex === activeIndex && (
                   <div className="absolute bottom-full left-0 md:left-auto md:right-0 mb-2 z-20 bg-card border border-border rounded-xl shadow-xl p-4 min-w-[200px]">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-semibold text-foreground">Compartir en</span>
@@ -389,6 +393,7 @@ export default function News({ standalone }: { standalone?: boolean }) {
                 )}
               </div>
             </div>
+          </div>
           </motion.div>
         </AnimatePresence>
 
