@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { useNavigate, useLocation, Link } from "react-router-dom"
 import ThemeToggle from "./ThemeToggle"
+import { MagneticButton } from "./ui/magnetic-button"
 
 const sections = [
   { id: "inicio", label: "Inicio" },
@@ -59,12 +60,14 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {sections.map(s =>
             s.isRoute ? (
-              <Link key={s.id} to="/noticias"
-                className="text-sm shake-link transition-all duration-300 hover:scale-110"
-                style={{ color: "#FCC600" }}
-                onClick={() => setOpen(false)}>
-                {s.label}<span className="alert-dot" />
-              </Link>
+              <MagneticButton key={s.id}>
+                <Link to="/noticias"
+                  className="text-sm shake-link transition-all duration-300 hover:scale-110 block"
+                  style={{ color: "#FCC600" }}
+                  onClick={() => setOpen(false)}>
+                  {s.label}<span className="alert-dot" />
+                </Link>
+              </MagneticButton>
             ) : (
               <button key={s.id} onClick={() => handleSectionClick(s.id)}
                 className="nav-underline text-sm text-foreground/80 nav-hover transition-colors cursor-pointer bg-transparent border-none">
@@ -87,12 +90,14 @@ export default function Nav() {
         <div className="md:hidden bg-card border-b border-border px-4 py-4 flex flex-col gap-3 shadow-lg shadow-black/10">
           {sections.map(s =>
             s.isRoute ? (
-              <Link key={s.id} to="/noticias"
-                className="text-sm shake-link transition-all duration-300 hover:scale-110"
-                style={{ color: "#FCC600" }}
-                onClick={() => setOpen(false)}>
-                {s.label}<span className="alert-dot" />
-              </Link>
+              <MagneticButton key={s.id}>
+                <Link to="/noticias"
+                  className="text-sm shake-link transition-all duration-300 hover:scale-110 block"
+                  style={{ color: "#FCC600" }}
+                  onClick={() => setOpen(false)}>
+                  {s.label}<span className="alert-dot" />
+                </Link>
+              </MagneticButton>
             ) : (
               <button key={s.id} onClick={() => handleSectionClick(s.id)}
                 className="text-sm text-foreground/80 nav-hover transition-colors text-left cursor-pointer bg-transparent border-none">
