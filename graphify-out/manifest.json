@@ -1,8 +1,8 @@
 {
   ".opencode/opencode.json": {
-    "mtime": 1785081864.034026,
-    "ast_hash": "f2ae21510d07365eb2bce8159272c7a0",
-    "semantic_hash": "f2ae21510d07365eb2bce8159272c7a0"
+    "mtime": 1785099236.338019,
+    "ast_hash": "1efe24ecf938911d4f23e4b1c6ec91f7",
+    "semantic_hash": ""
   },
   ".opencode/plugins/graphify.js": {
     "mtime": 1785081864.034026,
@@ -10,9 +10,9 @@
     "semantic_hash": "b33d000860642c6f4907a877e0387a21"
   },
   "package.json": {
-    "mtime": 1784638455.0806358,
-    "ast_hash": "2b663ccf9bf3c2b03bc89c02f71c77dd",
-    "semantic_hash": "2b663ccf9bf3c2b03bc89c02f71c77dd"
+    "mtime": 1785287312.1927896,
+    "ast_hash": "e64b0aff2018d308a7cbac03ff42c74b",
+    "semantic_hash": ""
   },
   "public/manifest.json": {
     "mtime": 1784563201.9332657,
@@ -70,9 +70,9 @@
     "semantic_hash": "bba4f347557b2aced23ea9494b961be2"
   },
   "src/components/Nav.tsx": {
-    "mtime": 1784638665.4016047,
-    "ast_hash": "fb0427bdd357dc72b2c92348886ac664",
-    "semantic_hash": "fb0427bdd357dc72b2c92348886ac664"
+    "mtime": 1785287346.8743012,
+    "ast_hash": "aaccd455065b3c56f1be49083ff766b8",
+    "semantic_hash": ""
   },
   "src/components/News.tsx": {
     "mtime": 1785077146.2953665,
@@ -178,5 +178,235 @@
     "mtime": 1784637807.195454,
     "ast_hash": "97d8c1652011586b74b747c52bb80d01",
     "semantic_hash": "97d8c1652011586b74b747c52bb80d01"
+  },
+  "src/components/ui/magnetic-button.tsx": {
+    "mtime": 1785287326.5624423,
+    "ast_hash": "cfa32a0577a5ceb40421780fe5e1bcc7",
+    "semantic_hash": ""
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1784563201.840258,
+    "ast_hash": "0d5af3e1028d44883aa99b0d99b4b3d3",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/SKILL.md": {
+    "mtime": 1785081864.0320263,
+    "ast_hash": "a8188bdf35abb58e750eb1750272caf8",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/add-watch.md": {
+    "mtime": 1785081836.5048752,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/exports.md": {
+    "mtime": 1785081836.5229106,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1785081836.5229106,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1785081836.5239115,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/hooks.md": {
+    "mtime": 1785081836.5239115,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/query.md": {
+    "mtime": 1785081836.524911,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/transcribe.md": {
+    "mtime": 1785081836.524911,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/graphify/references/update.md": {
+    "mtime": 1785081836.524911,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1785081864.0330267,
+    "ast_hash": "21ceb6533048be51308e69e7b74a35cf",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1784563201.840258,
+    "ast_hash": "94cc27861f74f7fc0f6ab4e62a819321",
+    "semantic_hash": ""
+  },
+  "public/images/0101.png": {
+    "mtime": 1784563201.8482573,
+    "ast_hash": "8a2343b2c8c7dad44fe26a0245ef9455",
+    "semantic_hash": ""
+  },
+  "public/images/0101.webp": {
+    "mtime": 1784637595.094,
+    "ast_hash": "99caa95cfe394e68dbdbc5928e5f4be4",
+    "semantic_hash": ""
+  },
+  "public/images/cabuya.jpg": {
+    "mtime": 1784563201.8502567,
+    "ast_hash": "700f028a2cbe9249ccb0801b4cc83853",
+    "semantic_hash": ""
+  },
+  "public/images/cabuya.webp": {
+    "mtime": 1784637595.327,
+    "ast_hash": "26313a258787fc0dc4addf11f5da31cb",
+    "semantic_hash": ""
+  },
+  "public/images/convite.jpg": {
+    "mtime": 1785075427.9442432,
+    "ast_hash": "dc926a5ea2a7eeb1981022051ba8b53b",
+    "semantic_hash": ""
+  },
+  "public/images/gallery1.jpg": {
+    "mtime": 1784563201.8522573,
+    "ast_hash": "7ea1d15295f21a84a9f88d6bd031b1d4",
+    "semantic_hash": ""
+  },
+  "public/images/gallery1.webp": {
+    "mtime": 1784637595.485,
+    "ast_hash": "c2db5098fb51dc7d245811cf776c02bb",
+    "semantic_hash": ""
+  },
+  "public/images/gallery2.jpg": {
+    "mtime": 1784563201.8532574,
+    "ast_hash": "81516dbdf8ba9c2d8ab37c10b42dda7a",
+    "semantic_hash": ""
+  },
+  "public/images/gallery2.webp": {
+    "mtime": 1784637595.674,
+    "ast_hash": "40087a8286383cbc23639a9bc9a5801c",
+    "semantic_hash": ""
+  },
+  "public/images/gallery3.jpg": {
+    "mtime": 1784563201.8542573,
+    "ast_hash": "4eb492ec6983e7d5b2ad9afe7a113454",
+    "semantic_hash": ""
+  },
+  "public/images/gallery3.webp": {
+    "mtime": 1784637595.862,
+    "ast_hash": "fdbd4115489609f9c7dcda6473ebbfa7",
+    "semantic_hash": ""
+  },
+  "public/images/gallery4.jpg": {
+    "mtime": 1784563201.857257,
+    "ast_hash": "9e4ad875f5eff087ad5c97dbae4bfa1e",
+    "semantic_hash": ""
+  },
+  "public/images/gallery4.webp": {
+    "mtime": 1784637596.574,
+    "ast_hash": "6cc01f4bb621929e6bde37a959180e3b",
+    "semantic_hash": ""
+  },
+  "public/images/gallery5.jpg": {
+    "mtime": 1784563201.9052634,
+    "ast_hash": "75508c49107a696c8b65f2ce0c33e232",
+    "semantic_hash": ""
+  },
+  "public/images/gallery5.webp": {
+    "mtime": 1784637596.754,
+    "ast_hash": "09bbc8768b797d178147c1ca43402ee8",
+    "semantic_hash": ""
+  },
+  "public/images/gallery6.jpg": {
+    "mtime": 1784563201.912262,
+    "ast_hash": "3a7b3f001e447ee426a17ea49ac0f0ff",
+    "semantic_hash": ""
+  },
+  "public/images/hero.jpg": {
+    "mtime": 1784563201.9172618,
+    "ast_hash": "3bfc162deeffcc9f89fdad00d0a5ee77",
+    "semantic_hash": ""
+  },
+  "public/images/hero.webp": {
+    "mtime": 1784637599.7,
+    "ast_hash": "00a26481df7819eec4ecbaa3bf6aee10",
+    "semantic_hash": ""
+  },
+  "public/images/logo-hero.png": {
+    "mtime": 1784563201.9192624,
+    "ast_hash": "8b4e7ceb79ab94e087a43e4a0bc89f4a",
+    "semantic_hash": ""
+  },
+  "public/images/logo-hero.webp": {
+    "mtime": 1784637599.819,
+    "ast_hash": "ba4f51473e1263de41221d790bf56e20",
+    "semantic_hash": ""
+  },
+  "public/images/logo.png": {
+    "mtime": 1784563201.920264,
+    "ast_hash": "477cf7fbcdd7b65ccaa962b28ddb2add",
+    "semantic_hash": ""
+  },
+  "public/images/logo.webp": {
+    "mtime": 1784637599.843,
+    "ast_hash": "f58e1ad6b585e939c7825532cd97aa87",
+    "semantic_hash": ""
+  },
+  "public/images/noche.jpg": {
+    "mtime": 1784563201.921264,
+    "ast_hash": "a1f3164aaa9b5fe5b011adba78b4c88e",
+    "semantic_hash": ""
+  },
+  "public/images/noche.webp": {
+    "mtime": 1784637600.01,
+    "ast_hash": "7b9b0545633802bed39f8ef8db88f09e",
+    "semantic_hash": ""
+  },
+  "public/images/ola-invernal.jpg": {
+    "mtime": 1784563201.928262,
+    "ast_hash": "3a7b3f001e447ee426a17ea49ac0f0ff",
+    "semantic_hash": ""
+  },
+  "public/images/popular.jpg": {
+    "mtime": 1784563201.930265,
+    "ast_hash": "62f07f66f2cfc315f2cae0a3cb2a1393",
+    "semantic_hash": ""
+  },
+  "public/images/popular.webp": {
+    "mtime": 1784637602.289,
+    "ast_hash": "90e780383f1342174e64db24c5e2e93b",
+    "semantic_hash": ""
+  },
+  "public/images/popular2.jpg": {
+    "mtime": 1784563201.9312663,
+    "ast_hash": "d31eb7511b15df1d3ba7271642209f56",
+    "semantic_hash": ""
+  },
+  "public/images/popular2.webp": {
+    "mtime": 1784637602.393,
+    "ast_hash": "17c59c25afcab894d1b01c070b919488",
+    "semantic_hash": ""
+  },
+  "public/images/prog1.jpg": {
+    "mtime": 1784563201.9322667,
+    "ast_hash": "2e06120de95bd9bb41a58529d757572f",
+    "semantic_hash": ""
+  },
+  "public/images/prog2.jpg": {
+    "mtime": 1784563201.9322667,
+    "ast_hash": "b2467d8a5a93c4511b9f25f7da85937c",
+    "semantic_hash": ""
+  },
+  "public/images/prog3.jpg": {
+    "mtime": 1784563201.9322667,
+    "ast_hash": "cc449b03efaad21ec8d683a0506f584b",
+    "semantic_hash": ""
+  },
+  "public/images/prog4.jpg": {
+    "mtime": 1784563201.9332657,
+    "ast_hash": "5ced06f5555865eeb636eda0820d7671",
+    "semantic_hash": ""
   }
 }
