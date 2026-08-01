@@ -12,9 +12,9 @@ const news = [
     id: "parrilla-mordisco",
     img: "images/parrilla-mordisco.jpg",
     date: "28 Julio 2026",
-    title: "AraucaCine acompañó el regreso de las hamburguesas de la Parrilla del Mordisco — defienden su TRICAMPEONATO",
-    excerpt: "AraucaCine estuvo presente en la Parrilla del Mordisco, donde volvieron las hamburguesas y esta vez defienden su tricampeonato. Probamos la #Reina: carne jugosa, mermelada de tocino dulcesita, queso apanado crujiente y queso crema parmesano con uchuba. Un sabor agridulce, una combinación tremenda — un mordisco y entendés por qué ganaron 3 veces seguidas.",
-    shareText: "Volvieron las hamburguesas y defienden su TRICAMPEONATO en la Parrilla del Mordisco. AraucaCine estuvo allí. 🍔👑"
+    title: "AraucaCine acompañó el regreso de las hamburguesas en la Parrilla de Elvis — defienden su TRICAMPEONATO",
+    excerpt: "AraucaCine estuvo presente en la Parrilla de Elvis, donde volvieron las hamburguesas y esta vez defienden su tricampeonato. Probamos la #Reina: carne jugosa, mermelada de tocino dulcesita, queso apanado crujiente y queso crema parmesano con uchuba. Un sabor agridulce, una combinación tremenda — un mordisco y entendés por qué ganaron 3 veces seguidas.",
+    shareText: "Volvieron las hamburguesas y defienden su TRICAMPEONATO en la Parrilla de Elvis. AraucaCine estuvo allí. 🍔👑"
   },
   {
     id: "convite",
