@@ -4,15 +4,15 @@
 
 @theme {
   --font-sans: "Open Sans", "Inter", sans-serif;
-  --color-background: #007eff;
-  --color-foreground: #ffffff;
-  --color-card: #0066d6;
-  --color-card-foreground: #ffffff;
-  --color-accent: #ffffff;
-  --color-accent-hover: #e6f0ff;
-  --color-muted: rgba(255, 255, 255, 0.7);
-  --color-border: rgba(255, 255, 255, 0.3);
-  --color-hero-overlay: rgba(0, 126, 255, 0.85);
+  --color-background: #1a1a6e;
+  --color-foreground: #f5e6c8;
+  --color-card: #2a2a7e;
+  --color-card-foreground: #f5e6c8;
+  --color-accent: #f5e6c8;
+  --color-accent-hover: #f0deb4;
+  --color-muted: rgba(181, 137, 154, 0.7);
+  --color-border: rgba(181, 137, 154, 0.3);
+  --color-hero-overlay: rgba(26, 26, 110, 0.85);
   --text-2xl: 1.75rem;
   --text-3xl: 2.25rem;
   --text-4xl: 3rem;
@@ -20,12 +20,12 @@
 }
 
 .light {
-  --color-background: #ffffff;
-  --color-foreground: #007eff;
-  --color-card: #f0f7ff;
-  --color-card-foreground: #0055a0;
-  --color-border: #cce5ff;
-  --color-muted: #5a8ec4;
+  --color-background: #f5f0e8;
+  --color-foreground: #1a1a6e;
+  --color-card: #ede5d8;
+  --color-card-foreground: #1a1a6e;
+  --color-border: #d4c4b0;
+  --color-muted: #8a7060;
 }
 
 html {
@@ -53,15 +53,15 @@ body {
   transition: transform 0.25s ease;
 }
 .nav-underline:hover::after {
-  background: #FCC600;
+  background: #b5899a;
   transform: translateX(-50%) scaleX(1);
 }
 
 :root {
-  --hero-overlay: rgba(0, 126, 255, 0.95);
+  --hero-overlay: rgba(26, 26, 110, 0.95);
 }
 .light {
-  --hero-overlay: rgba(255, 255, 255, 0.95);
+  --hero-overlay: rgba(245, 240, 232, 0.95);
 }
 
 @keyframes rippleAnim {
@@ -91,7 +91,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #FCC600;
+  background: #b5899a;
   margin-left: 4px;
   vertical-align: super;
   animation: pulse 2s ease-in-out infinite;
@@ -103,8 +103,8 @@ body {
 
 /* Nav hover bone-white */
 .nav-hover:hover {
-  color: #f5f0e1;
-  -webkit-text-stroke: 0.7px #f5f0e1;
+  color: #f5e6c8;
+  -webkit-text-stroke: 0.7px #f5e6c8;
   text-shadow: 0.5px 0 0 currentColor, -0.5px 0 0 currentColor;
 }
 

@@ -9,6 +9,14 @@ import { Separator } from "./ui/separator"
 
 const news = [
   {
+    id: "limpieza-cunetas",
+    img: "images/limpieza-cunetas.jpg",
+    date: "9 Septiembre 2026",
+    title: "AraucaCine acompaña jornada de limpieza de cunetas en Barrio Porvenir — comunidad y empresa se unen por el aseo",
+    excerpt: "AraucaCine estuvo presente en el Barrio Porvenir, en el sector del cementerio, en la entrada de talanquera, documentando una jornada de limpieza de cunetas organizada por el presidente del barrio, Marcelo Arramires. La empresa Caribabare y el equipo de las 'escobitas' colaboraron activamente en esta iniciativa comunitaria. La cuadra donde se realizó el trabajo también manifestó su agradecimiento. Se invita a la comunidad para una jornada de limpieza más amplia el próximo sábado alrededor del cementerio.",
+    shareText: "AraucaCine documentó la jornada de limpieza de cunetas en Barrio Porvenir. Comunidad y empresa Caribabare unidas por el aseo. 🧹✨"
+  },
+  {
     id: "parrilla-mordisco",
     img: "images/parrilla-mordisco.jpg",
     date: "28 Julio 2026",

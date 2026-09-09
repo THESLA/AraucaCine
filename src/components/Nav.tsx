@@ -63,7 +63,7 @@ export default function Nav() {
               <MagneticButton key={s.id}>
                 <button onClick={() => handleSectionClick(s.id)}
                   className="text-sm shake-link transition-all duration-300 hover:scale-110 cursor-pointer bg-transparent border-none"
-                  style={{ color: "#FCC600" }}>
+                  style={{ color: "#b5899a" }}>
                   {s.label}<span className="alert-dot" />
                 </button>
               </MagneticButton>
@@ -92,7 +92,7 @@ export default function Nav() {
               <MagneticButton key={s.id}>
                 <button onClick={() => handleSectionClick(s.id)}
                   className="text-sm shake-link transition-all duration-300 hover:scale-110 cursor-pointer bg-transparent border-none"
-                  style={{ color: "#FCC600" }}>
+                  style={{ color: "#b5899a" }}>
                   {s.label}<span className="alert-dot" />
                 </button>
               </MagneticButton>
