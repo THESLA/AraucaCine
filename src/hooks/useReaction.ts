@@ -11,7 +11,10 @@ function storageCountKey(newsId: string, reaction: string) {
 }
 
 export function useReaction(newsId: string, reaction: string) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(() => {
+    // Inicializar inmediatamente desde localStorage
+    return parseInt(localStorage.getItem(storageCountKey(newsId, reaction)) || '0')
+  })
   const [reacted, setReacted] = useState(false)
   const storageKey = `ac_reacted_${newsId}_${reaction}`
 
@@ -23,11 +26,14 @@ export function useReaction(newsId: string, reaction: string) {
     (async () => {
       try {
         const res = await fetch(`${API_BASE}/get/${key(newsId, reaction)}`, {
-          signal: AbortSignal.timeout(3000)
+          signal: AbortSignal.timeout(5000)
         })
         if (res.ok) {
           const data = await res.json()
-          setCount(Number(data.value))
+          const apiCount = Number(data.value)
+          setCount(apiCount)
+          // Sincronizar localStorage con el valor de la API
+          localStorage.setItem(storageCountKey(newsId, reaction), apiCount.toString())
           return
         }
       } catch {}
@@ -42,11 +48,13 @@ export function useReaction(newsId: string, reaction: string) {
     try {
       const res = await fetch(`${API_BASE}/hit/${key(newsId, reaction)}`, {
         method: 'POST',
-        signal: AbortSignal.timeout(3000)
+        signal: AbortSignal.timeout(5000)
       })
       if (res.ok) {
         const data = await res.json()
-        setCount(Number(data.value))
+        const newCount = Number(data.value)
+        setCount(newCount)
+        localStorage.setItem(storageCountKey(newsId, reaction), newCount.toString())
         localStorage.setItem(storageKey, '1')
         setReacted(true)
         return

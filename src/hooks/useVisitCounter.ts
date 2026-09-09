@@ -4,17 +4,23 @@ const VISIT_KEY = 'ac_visits'
 const VISIT_API = 'https://countapi.mileshilliard.com/api/v1/hit/arauacine-visits'
 
 export function useVisitCounter() {
-  const [count, setCount] = useState<number>(0)
+  const [count, setCount] = useState<number>(() => {
+    // Inicializar inmediatamente desde localStorage
+    return parseInt(localStorage.getItem(VISIT_KEY) || '0')
+  })
 
   useEffect(() => {
     (async () => {
       try {
         const res = await fetch(VISIT_API, {
-          signal: AbortSignal.timeout(3000)
+          signal: AbortSignal.timeout(5000)
         })
         if (res.ok) {
           const data = await res.json()
-          setCount(Number(data.value))
+          const apiCount = Number(data.value)
+          setCount(apiCount)
+          // Sincronizar localStorage con el valor de la API
+          localStorage.setItem(VISIT_KEY, apiCount.toString())
           return
         }
       } catch {}
