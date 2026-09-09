@@ -11,58 +11,72 @@ export default function Hero() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const img = new Image()
-    img.crossOrigin = 'anonymous'
-    img.onload = () => {
-      const chars = ' .,:;i1tfLCG08@'
-      const density = 4
+    const render = () => {
+      const img = new Image()
+      img.crossOrigin = 'anonymous'
+      img.onload = () => {
+        const chars = ' .,:;i1tfLCG08@'
+        const density = 6
+        const screenW = window.innerWidth
+        const screenH = window.innerHeight
 
-      canvas.width = Math.floor(window.innerWidth / density)
-      canvas.height = Math.floor(window.innerHeight / density)
+        canvas.width = screenW
+        canvas.height = screenH
 
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-      const pixels = imageData.data
+        const cols = Math.floor(screenW / density)
+        const rows = Math.floor(screenH / density)
 
-      ctx.fillStyle = '#1a1a6e'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+        const tempCanvas = document.createElement('canvas')
+        tempCanvas.width = cols
+        tempCanvas.height = rows
+        const tempCtx = tempCanvas.getContext('2d')!
+        tempCtx.drawImage(img, 0, 0, cols, rows)
+        const imageData = tempCtx.getImageData(0, 0, cols, rows)
+        const pixels = imageData.data
 
-      ctx.font = `${density}px monospace`
-      ctx.textBaseline = 'top'
+        ctx.fillStyle = '#1a1a6e'
+        ctx.fillRect(0, 0, screenW, screenH)
 
-      for (let y = 0; y < canvas.height; y++) {
-        for (let x = 0; x < canvas.width; x++) {
-          const i = (y * canvas.width + x) * 4
-          const r = pixels[i]
-          const g = pixels[i + 1]
-          const b = pixels[i + 2]
-          const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255
-          const charIndex = Math.floor((1 - brightness) * (chars.length - 1))
-          const char = chars[charIndex]
+        ctx.font = `${density}px monospace`
+        ctx.textBaseline = 'top'
 
-          const hue = Math.atan2(g - 128, r - 128) * (180 / Math.PI)
-          const saturation = Math.sqrt(Math.pow(r - 128, 2) + Math.pow(g - 128, 2)) / 128
-          const lightness = brightness * 60 + 20
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < cols; x++) {
+            const i = (y * cols + x) * 4
+            const r = pixels[i]
+            const g = pixels[i + 1]
+            const b = pixels[i + 2]
+            const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255
+            const charIndex = Math.floor((1 - brightness) * (chars.length - 1))
+            const char = chars[charIndex]
 
-          if (saturation > 0.3) {
-            ctx.fillStyle = `hsl(${hue}, ${saturation * 80}%, ${lightness}%)`
-          } else {
-            ctx.fillStyle = `rgba(245, 230, 200, ${brightness * 0.8 + 0.2})`
+            const hue = Math.atan2(g - 128, r - 128) * (180 / Math.PI)
+            const saturation = Math.sqrt(Math.pow(r - 128, 2) + Math.pow(g - 128, 2)) / 128
+            const lightness = brightness * 60 + 20
+
+            if (saturation > 0.3) {
+              ctx.fillStyle = `hsl(${hue}, ${saturation * 80}%, ${lightness}%)`
+            } else {
+              ctx.fillStyle = `rgba(245, 230, 200, ${brightness * 0.8 + 0.2})`
+            }
+
+            ctx.fillText(char, x * density, y * density)
           }
-
-          ctx.fillText(char, x * density, y * density)
         }
       }
+      img.src = 'images/hero.jpg'
     }
-    img.src = 'images/hero.jpg'
+
+    render()
+    window.addEventListener('resize', render)
+    return () => window.removeEventListener('resize', render)
   }, [])
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-        style={{ imageRendering: 'pixelated' }}
+        className="absolute inset-0 w-full h-full"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/80" />
       <div className="text-center px-4 z-10 max-w-3xl">
