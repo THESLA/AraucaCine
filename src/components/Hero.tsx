@@ -50,15 +50,8 @@ export default function Hero() {
             const charIndex = Math.floor((1 - brightness) * (chars.length - 1))
             const char = chars[charIndex]
 
-            const hue = Math.atan2(g - 128, r - 128) * (180 / Math.PI)
-            const saturation = Math.sqrt(Math.pow(r - 128, 2) + Math.pow(g - 128, 2)) / 128
-            const lightness = brightness * 60 + 20
-
-            if (saturation > 0.3) {
-              ctx.fillStyle = `hsl(${hue}, ${saturation * 80}%, ${lightness}%)`
-            } else {
-              ctx.fillStyle = `rgba(245, 230, 200, ${brightness * 0.8 + 0.2})`
-            }
+            const gray = Math.floor(brightness * 180 + 40)
+            ctx.fillStyle = `rgb(${gray}, ${gray}, ${gray})`
 
             ctx.fillText(char, x * density, y * density)
           }
