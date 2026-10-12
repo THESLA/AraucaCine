@@ -85,9 +85,28 @@ export default function TallerSaravena({
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) cerrar() }}>
-      <DialogContent className="max-w-5xl bg-background/95 border-border max-h-[88vh] overflow-y-auto p-0 [&>button]:bg-background/70 [&>button]:backdrop-blur-sm [&>button]:rounded-full [&>button]:p-2 [&>button]:right-3 [&>button]:top-3">
+      <DialogContent className="max-w-5xl bg-background/95 border-border max-h-[88vh] overflow-y-auto p-0 [&>button]:bg-muted [&>button]:rounded-full [&>button]:p-2 [&>button]:right-4 [&>button]:top-4">
         {idx === null ? (
           <>
+            <div className="flex items-center gap-2.5 px-5 py-3 border-b border-border bg-background">
+              <img
+                src="images/logo.png"
+                alt="AraucaCine"
+                className="logo-nav h-9 w-9 shrink-0"
+              />
+              <div className="min-w-0">
+                <span
+                  className="block text-foreground text-xl font-bold leading-none truncate"
+                  style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}
+                >
+                  AraucaCine
+                </span>
+                <span className="block text-[10px] text-muted leading-none mt-0.5">
+                  Asociación sin ánimo de lucro
+                </span>
+              </div>
+            </div>
+
             <div className="relative h-56 md:h-80 overflow-hidden">
               <img
                 src="images/taller-saravena/taller-4.jpg"
