@@ -102,7 +102,7 @@ export default function TallerSaravena({
                   AraucaCine
                 </span>
                 <span className="block text-[10px] text-muted leading-none mt-0.5">
-                  Asociación sin ánimo de lucro
+                  Memoria, víctimas y paz
                 </span>
               </div>
             </div>
