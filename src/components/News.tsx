@@ -9,6 +9,14 @@ import { Separator } from "./ui/separator"
 
 const news = [
   {
+    id: "ahora-soy-feliz",
+    img: "images/taller-saravena/taller-6.jpg",
+    date: "9 Octubre 2026",
+    title: "Cuatro días de rodaje y una gran función en el parque: el grupo juvenil de Saravena presenta «Ahora Soy Feliz»",
+    excerpt: "Cuatro días de cámaras, actores y trabajo en equipo dieron forma a un cortometraje hecho por el mismo grupo de campistas juveniles de Saravena: «Ahora Soy Feliz». La jornada cerró el viernes 9 de octubre con una gran función en un parque de la ciudad, donde llegó muchísima gente. Allí compartimos con el grupo de freestyle de Saravena, y la película se dio a conocer entre todos los que estaban ese día. Una obra que nace del proceso, se construye con las propias manos de sus protagonistas y deja una pregunta abierta sobre quiénes somos.",
+    shareText: "Cuatro días de rodaje y una gran función en el parque. El grupo juvenil de Saravena presenta su cortometraje «Ahora Soy Feliz». 🎬"
+  },
+  {
     id: "limpieza-cunetas",
     img: "images/limpieza-cunetas.jpg",
     date: "9 Septiembre 2026",
