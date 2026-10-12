@@ -10,7 +10,7 @@ const programs = [
   },
   {
     id: "talleres-audiovisuales",
-    img: "images/prog2.jpg",
+    img: "images/taller-saravena/taller-5.jpg",
     title: "Talleres Audiovisuales",
     text: "Capacitación en producción audiovisual para jóvenes, comunidades rurales y víctimas del conflicto, enseñando guion, dirección, fotografía y edición como herramientas de expresión y reconstrucción del tejido social."
   },
