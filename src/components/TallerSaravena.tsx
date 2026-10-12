@@ -85,22 +85,29 @@ export default function TallerSaravena({
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) cerrar() }}>
-      <DialogContent className="max-w-4xl bg-background/95 border-border max-h-[88vh] overflow-y-auto p-4 md:p-6">
+      <DialogContent className="max-w-5xl bg-background/95 border-border max-h-[88vh] overflow-y-auto p-0 [&>button]:bg-background/70 [&>button]:backdrop-blur-sm [&>button]:rounded-full [&>button]:p-2 [&>button]:right-3 [&>button]:top-3">
         {idx === null ? (
           <>
-            <div className="pr-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Ahora Soy Feliz
-              </h3>
-              <p className="text-xs font-medium text-accent mb-4">
-                Taller Audiovisual · Saravena, Arauca
-              </p>
-              <p className="text-sm text-muted leading-relaxed text-justify mb-5">
-                El grupo juvenil y los campistas juveniles de Saravena filaron su
-                propio cortometraje durante cuatro días de cámaras, actores y trabajo
-                en equipo. La jornada cerró con una función de cine al aire libre
-                abierta a toda la comunidad.
-              </p>
+            <div className="relative h-56 md:h-80 overflow-hidden">
+              <img
+                src="images/taller-saravena/taller-4.jpg"
+                alt="Rodaje de Ahora Soy Feliz con los jóvenes de Saravena"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/10" />
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-2">
+                  Taller Audiovisual · Saravena, Arauca
+                </p>
+                <h3 className="text-4xl md:text-6xl font-bold text-foreground leading-[1.05] tracking-tight">
+                  Ahora Soy Feliz
+                </h3>
+              </div>
+            </div>
+
+            <div className="p-5 md:p-8">
               <div className="flex flex-wrap gap-2 mb-6">
                 {chips.map(c => (
                   <span
@@ -111,40 +118,46 @@ export default function TallerSaravena({
                   </span>
                 ))}
               </div>
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-5 items-start mb-8">
-              <a
-                href={TIKTOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block rounded-xl overflow-hidden border border-border hover:border-accent/60 transition-colors no-underline"
-                aria-label="Ver el cortometraje Ahora Soy Feliz en TikTok"
-              >
-                <img
-                  src="images/taller-saravena/taller-4.jpg"
-                  alt="Equipo de rodaje de Ahora Soy Feliz"
-                  width={1200}
-                  height={800}
-                  loading="lazy"
-                  className="w-full aspect-video object-cover"
-                />
-                <div className="absolute inset-0 bg-background/45 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 bg-accent text-background text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg group-hover:scale-105 transition-transform">
-                    <Play size={15} fill="currentColor" />
-                    Ver en TikTok
+              <p className="text-sm md:text-base text-muted leading-relaxed text-justify mb-8">
+                El grupo juvenil y los campistas juveniles de Saravena filaron su
+                propio cortometraje durante cuatro días de cámaras, actores y trabajo
+                en equipo. La jornada cerró con una función de cine al aire libre
+                abierta a toda la comunidad.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-5 items-start mb-10">
+                <a
+                  href={TIKTOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block rounded-xl overflow-hidden border border-border hover:border-accent/60 transition-colors no-underline"
+                  aria-label="Ver el cortometraje Ahora Soy Feliz en TikTok"
+                >
+                  <img
+                    src="images/taller-saravena/taller-6.jpg"
+                    alt="Función de cine al aire libre de Ahora Soy Feliz"
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    className="w-full aspect-video object-cover"
+                  />
+                  <div className="absolute inset-0 bg-background/45 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-2 bg-accent text-background text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg group-hover:scale-105 transition-transform">
+                      <Play size={15} fill="currentColor" />
+                      Ver el cortometraje
+                    </span>
+                  </div>
+                  <span className="absolute bottom-0 inset-x-0 px-4 py-3 text-left text-xs text-foreground/90 bg-gradient-to-t from-background/90 to-transparent">
+                    Cortometraje completo · Ahora Soy Feliz
                   </span>
-                </div>
-                <span className="absolute bottom-0 inset-x-0 px-4 py-3 text-left text-xs text-foreground/90 bg-gradient-to-t from-background/90 to-transparent">
-                  Cortometraje completo · Ahora Soy Feliz
-                </span>
-              </a>
+                </a>
 
-              <div className="bg-card border border-border rounded-xl p-5 h-fit">
-                <h4 className="text-sm font-semibold text-foreground mb-3">
-                  Una producción de
-                </h4>
-                <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
+                <div className="bg-card border border-border rounded-xl p-5 h-fit">
+                  <h4 className="text-sm font-semibold text-foreground mb-3">
+                    Una producción de
+                  </h4>
+                  <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
                   <li>AraucaCine</li>
                   <li>Gobernación de Arauca</li>
                   <li>Jóvenes Campistas de Saravena</li>
@@ -184,9 +197,10 @@ export default function TallerSaravena({
                 ))}
               </div>
             </div>
+            </div>
           </>
         ) : (
-          <div>
+          <div className="p-5 md:p-6">
             <button
               onClick={volver}
               className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors cursor-pointer bg-transparent border-none mb-3"

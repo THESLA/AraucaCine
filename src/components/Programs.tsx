@@ -76,9 +76,12 @@ export default function Programs() {
                   <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">{p.title}</h3>
                   <p className="text-sm text-muted leading-relaxed line-clamp-3 transition-all duration-300 group-hover:line-clamp-none text-justify">{p.text}</p>
                   {esTaller && (
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent mt-4">
+                    <span className="inline-flex flex-wrap items-center gap-1.5 text-xs font-semibold text-accent mt-4">
                       Ver el último taller
                       <span aria-hidden="true">→</span>
+                      <span className="text-muted/70 font-normal">
+                        «Ahora Soy Feliz»
+                      </span>
                     </span>
                   )}
                 </div>
