@@ -2,10 +2,13 @@ import { useState, useEffect } from "react"
 import { Dialog, DialogContent } from "./ui/dialog"
 
 const images = Array.from({ length: 6 }, (_, i) => ({
-  src: i === 3 ? "images/taller-saravena/taller-3.jpg" : `images/gallery${i + 1}.jpg`,
+  src:
+    i === 1 ? "images/taller-saravena/taller-8.jpg"
+    : i === 3 ? "images/taller-saravena/taller-3.jpg"
+    : `images/gallery${i + 1}.jpg`,
   alt: [
     "Taller de Producción 2025 - participantes aprendiendo edición",
-    "Función de cine comunitario en Caño Limón al aire libre",
+    "Taller en aula: jóvenes aprendiendo planos cinematográficos junto al facilitador",
     "Festival de Cine Orinoquía 2025 presentación",
     "Participante joven del taller de Saravena entrevistada por el facilitador",
     "Taller de Guion Creativo con jóvenes",
@@ -13,7 +16,7 @@ const images = Array.from({ length: 6 }, (_, i) => ({
   ][i],
   caption: [
     "Taller de Producción 2025",
-    "Cine Comunitario en Caño Limón",
+    "Clase de planos cinematográficos · Taller de Saravena",
     "Festival de Cine Orinoquía 2025",
     "Inscripción de participantes · Taller de Saravena",
     "Taller de Guion Creativo",
