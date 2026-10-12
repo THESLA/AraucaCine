@@ -4,7 +4,7 @@ import TallerSaravena from "./TallerSaravena"
 const programs = [
   {
     id: "cine-comunitario",
-    img: "images/prog1.jpg",
+    img: "images/taller-saravena/taller-6.jpg",
     title: "Cine Comunitario",
     text: "Funciones de cine gratuitas en barrios y veredas, llevando la magia del séptimo arte a comunidades con acceso limitado a salas de cine, priorizando espacios de integración cultural y convivencia."
   },
