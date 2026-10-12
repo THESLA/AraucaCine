@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from "react"
 import { Dialog, DialogContent } from "./ui/dialog"
-import { ChevronLeft, ChevronRight, ArrowLeft, ExternalLink } from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowLeft, Play } from "lucide-react"
 
-const TIKTOK_ID = "7695778986407906580"
-const TIKTOK_URL = `https://www.tiktok.com/@araucacine/video/${TIKTOK_ID}`
+const TIKTOK_URL = "https://www.tiktok.com/@araucacine/video/7695778986407906580"
 
 const fotos = [
   {
@@ -114,41 +113,46 @@ export default function TallerSaravena({
               </div>
             </div>
 
-            <div className="grid md:grid-cols-[325px_1fr] gap-6 items-start mb-8">
-              <div className="w-full max-w-[325px] mx-auto">
-                <div className="rounded-xl overflow-hidden border border-border bg-black">
-                  <iframe
-                    src={`https://www.tiktok.com/embed/v2/${TIKTOK_ID}`}
-                    width="325"
-                    height="720"
-                    title="Ahora Soy Feliz — cortometraje de AraucaCine"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                    allowFullScreen
-                    loading="lazy"
-                    className="w-full block"
-                  />
+            <div className="grid md:grid-cols-2 gap-5 items-start mb-8">
+              <a
+                href={TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block rounded-xl overflow-hidden border border-border hover:border-accent/60 transition-colors no-underline"
+                aria-label="Ver el cortometraje Ahora Soy Feliz en TikTok"
+              >
+                <img
+                  src="images/taller-saravena/taller-4.jpg"
+                  alt="Equipo de rodaje de Ahora Soy Feliz"
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  className="w-full aspect-video object-cover"
+                />
+                <div className="absolute inset-0 bg-background/45 flex items-center justify-center">
+                  <span className="inline-flex items-center gap-2 bg-accent text-background text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg group-hover:scale-105 transition-transform">
+                    <Play size={15} fill="currentColor" />
+                    Ver en TikTok
+                  </span>
                 </div>
-                <a
-                  href={TIKTOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors mt-2 no-underline"
-                >
-                  Ver el cortometraje en TikTok
-                  <ExternalLink size={12} />
-                </a>
-              </div>
+                <span className="absolute bottom-0 inset-x-0 px-4 py-3 text-left text-xs text-foreground/90 bg-gradient-to-t from-background/90 to-transparent">
+                  Cortometraje completo · Ahora Soy Feliz
+                </span>
+              </a>
 
-              <div className="bg-card border border-border rounded-xl p-5">
-                <h4 className="text-sm font-semibold text-foreground mb-2">
+              <div className="bg-card border border-border rounded-xl p-5 h-fit">
+                <h4 className="text-sm font-semibold text-foreground mb-3">
                   Una producción de
                 </h4>
-                <ul className="text-sm text-muted leading-relaxed space-y-1.5">
+                <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
                   <li>AraucaCine</li>
                   <li>Gobernación de Arauca</li>
                   <li>Jóvenes Campistas de Saravena</li>
                 </ul>
+                <p className="text-xs text-muted/70 border-t border-border pt-4 leading-relaxed">
+                  Taller de 4 días en Saravena, Arauca. La jornada cerró con una
+                  función de cine al aire libre abierta a toda la comunidad.
+                </p>
               </div>
             </div>
 
