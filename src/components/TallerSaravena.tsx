@@ -185,6 +185,7 @@ export default function TallerSaravena({
                   <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
                     <li>AraucaCine</li>
                     <li>Jóvenes Campistas de Saravena</li>
+                    <li>Casa Cimarrona</li>
                   </ul>
                   <p className="text-xs text-muted/70 border-t border-border pt-4 leading-relaxed">
                     Taller de 4 días en Saravena, Arauca. Cierre el viernes 9 de
