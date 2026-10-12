@@ -37,8 +37,8 @@ const fotos = [
   },
   {
     src: "images/taller-saravena/taller-7.jpg",
-    alt: "Equipo del cortometraje reunido al final de la jornada",
-    caption: "El equipo del cortometraje al final de la jornada",
+    alt: "Fotografía grupal del grupo de freestyle del municipio de Saravena",
+    caption: "Fotografía con el grupo de freestyle del municipio de Saravena",
   },
 ]
 
@@ -180,7 +180,6 @@ export default function TallerSaravena({
                   </h4>
                   <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
                   <li>AraucaCine</li>
-                  <li>Gobernación de Arauca</li>
                   <li>Jóvenes Campistas de Saravena</li>
                 </ul>
                 <p className="text-xs text-muted/70 border-t border-border pt-4 leading-relaxed">
