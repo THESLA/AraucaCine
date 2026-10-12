@@ -88,35 +88,37 @@ export default function TallerSaravena({
       <DialogContent className="max-w-5xl bg-background/95 border-border max-h-[88vh] overflow-y-auto p-0 [&>button]:bg-muted [&>button]:rounded-full [&>button]:p-2 [&>button]:right-4 [&>button]:top-4">
         {idx === null ? (
           <>
-            <div className="flex items-center gap-2.5 px-5 py-3 border-b border-border bg-background">
-              <img
-                src="images/logo.png"
-                alt="AraucaCine"
-                className="logo-nav h-9 w-9 shrink-0"
-              />
-              <div className="min-w-0">
-                <span
-                  className="block text-foreground text-xl font-bold leading-none truncate"
-                  style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}
-                >
-                  AraucaCine
-                </span>
-                <span className="block text-[10px] text-muted leading-none mt-0.5">
-                  Memoria, víctimas y paz
-                </span>
-              </div>
-            </div>
-
-            <div className="relative h-56 md:h-80 overflow-hidden">
+            <div className="relative overflow-hidden">
               <img
                 src="images/taller-saravena/taller-4.jpg"
                 alt="Rodaje de Ahora Soy Feliz con los jóvenes de Saravena"
                 width={1200}
                 height={800}
-                className="w-full h-full object-cover"
+                className="w-full h-72 md:h-[420px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/10" />
-              <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/90 via-background/40 to-transparent" />
+
+              <div className="absolute inset-x-0 top-0 flex items-center gap-2.5 px-5 py-4">
+                <img
+                  src="images/logo.png"
+                  alt="AraucaCine"
+                  className="logo-nav h-9 w-9 shrink-0"
+                />
+                <div className="min-w-0">
+                  <span
+                    className="block text-foreground text-xl font-bold leading-none truncate"
+                    style={{ fontFamily: "'Arial Black', 'Arial Nova', Arial, sans-serif" }}
+                  >
+                    AraucaCine
+                  </span>
+                  <span className="block text-[10px] text-muted leading-none mt-0.5">
+                    Memoria, víctimas y paz
+                  </span>
+                </div>
+              </div>
+
+              <div className="absolute inset-x-0 bottom-0 px-5 pb-6 pt-20 md:px-8 md:pb-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-accent mb-2">
                   Taller Audiovisual · Saravena, Arauca
                 </p>
