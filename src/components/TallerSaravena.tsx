@@ -141,10 +141,14 @@ export default function TallerSaravena({
               </div>
 
               <p className="text-sm md:text-base text-muted leading-relaxed text-justify mb-8">
-                El grupo juvenil y los campistas juveniles de Saravena filaron su
-                propio cortometraje durante cuatro días de cámaras, actores y trabajo
-                en equipo. La jornada cerró con una función de cine al aire libre
-                abierta a toda la comunidad.
+                Cuatro días de cámaras, actores y trabajo en equipo dieron forma a un
+                cortometraje hecho por el mismo grupo de campistas juveniles de
+                Saravena:{" "}
+                <span className="text-foreground font-medium">Ahora Soy Feliz</span>.
+                La jornada cerró el viernes 9 de octubre en un parque de Saravena,
+                donde llegó muchísima gente. Allí compartimos con el grupo de
+                freestyle de Saravena, y el cortometraje se dio a conocer entre todos
+                los que estaban ahí ese día.
               </p>
 
               <div className="grid md:grid-cols-2 gap-5 items-start mb-10">
@@ -179,15 +183,16 @@ export default function TallerSaravena({
                     Una producción de
                   </h4>
                   <ul className="text-sm text-muted leading-relaxed space-y-1.5 mb-5">
-                  <li>AraucaCine</li>
-                  <li>Jóvenes Campistas de Saravena</li>
-                </ul>
-                <p className="text-xs text-muted/70 border-t border-border pt-4 leading-relaxed">
-                  Taller de 4 días en Saravena, Arauca. La jornada cerró con una
-                  función de cine al aire libre abierta a toda la comunidad.
-                </p>
+                    <li>AraucaCine</li>
+                    <li>Jóvenes Campistas de Saravena</li>
+                  </ul>
+                  <p className="text-xs text-muted/70 border-t border-border pt-4 leading-relaxed">
+                    Taller de 4 días en Saravena, Arauca. Cierre el viernes 9 de
+                    octubre en un parque de Saravena, con la presentación del
+                    cortometraje y la participación del grupo de freestyle.
+                  </p>
+                </div>
               </div>
-            </div>
 
             <div className="border-t border-border pt-6">
               <h4 className="text-sm font-semibold text-foreground mb-4">
